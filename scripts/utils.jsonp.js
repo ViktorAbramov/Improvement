@@ -14,16 +14,29 @@ utils.Jsonp = function() {
   };
 
   function setURL_(url, data) {
+    url += serializeData_(data);
     window.location.hash = '';
     window.location.hash += url;
-    setData_(data);
   }
 
-  function setData_(data) {
-    window.location.hash += '?';
+  function serializeData_(data) {
+    var params = '';
+    var params_ = [];
     for (var key in data) {
-      window.location.hash += key + '=' + data[key] + '&';
+      var tempParams = [];
+      tempParams.push(key);
+      tempParams.push(data[key]);
+      params_.push(tempParams);
     }
+    for (var i = 0; i < params_.length; i++) {
+      var separator = '?';
+      var param = params_[i];
+      key = param[0];
+      var value = param[1];
+      if (i == params_.length - 1) separator = '';
+      params += key + '=' + value + separator;
+      }
+    return params;
   }
 
 };
