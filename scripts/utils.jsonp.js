@@ -5,12 +5,9 @@ utils.Jsonp = function() {
   this.req = function(url, data, callbackUrl) {
     var head = document.getElementsByTagName('HEAD')[0];
     var script = document.createElement('SCRIPT');
-    setURL_(url, data);
-    script.src = callbackUrl;
+    var params = serializeData_(data);
+    script.src = url + params;
     head.appendChild(script);
-    window['mycallback'] = function(response) {
-      console.log(response);
-    };
   };
 
   function setURL_(url, data) {
@@ -29,7 +26,7 @@ utils.Jsonp = function() {
       params_.push(tempParams);
     }
     for (var i = 0; i < params_.length; i++) {
-      var separator = '?';
+      var separator = '&';
       var param = params_[i];
       key = param[0];
       var value = param[1];
