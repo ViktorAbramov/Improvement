@@ -10,11 +10,6 @@ utils.Jsonp = function() {
     head.appendChild(script);
   };
 
-  function setURL_(url, data) {
-    url += serializeData_(data);
-    window.location.hash = '';
-    window.location.hash += url;
-  }
 
   function serializeData_(data) {
     var params = '';
