@@ -1,36 +1,50 @@
 
 
+/**
+* @constructor
+*/
 utils.Jsonp = function() {
-  
-  this.req = function(url, data, callbackUrl) {
+
+
+  var DATA_SEPARATOR = '&';
+ 
+ /**
+ * Creates JSONP request.
+ * @param {string} url URL for request.
+ * @param {Object} data Incoming data for request
+ * @param {Object} callback Callback function.
+  */
+  this.req = function(url, data, callback) {
     var head = document.getElementsByTagName('HEAD')[0];
     var script = document.createElement('SCRIPT');
-    var params = serializeData_(data);
+    var params = toQueryString_(data);
+    if (url[url.length] != '?') url += '?';
     script.src = url + params;
     head.appendChild(script);
+    callback;
   };
 
+  /**
+   * Generates callback's name.
+   * @return {string}
+   * @public
+   */
+  this.getCallbackName = function() {
+    return 'callback' + new Date().getTime();
+  };
 
-  function serializeData_(data) {
-    var params = '';
-    var params_ = [];
+  /**
+   * Generates query string from incoming params.
+   * @param {!Object} data Incoming data.
+   * @return {string}
+   * @private
+   */
+  function toQueryString_(data) {
+    var paramPairs_ = [];
     for (var key in data) {
-      var tempParams = [];
-      tempParams.push(key);
-      tempParams.push(data[key]);
-      params_.push(tempParams);
+      paramPairs_.push(key + '=' + data[key]);
     }
-    for (var i = 0; i < params_.length; i++) {
-      var separator = '&';
-      var param = params_[i];
-      key = param[0];
-      var value = param[1];
-      if (i == params_.length - 1) separator = '';
-      params += key + '=' + value + separator;
-      }
-    return params;
+    return paramPairs_.join(DATA_SEPARATOR);
   }
 
 };
-
-utils.jsonp = new utils.Jsonp;
