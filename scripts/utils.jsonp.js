@@ -5,15 +5,18 @@
 */
 utils.Jsonp = function() {
 
-
+  /**
+   * @type {string}
+   * @const
+   */
   var DATA_SEPARATOR = '&';
  
- /**
- * Creates JSONP request.
- * @param {string} url URL for request.
- * @param {Object} data Incoming data for request
- * @param {Object} callback Callback function.
-  */
+  /**
+   * Creates JSONP request.
+   * @param {string} url URL for request.
+   * @param {Object} data Incoming data for request
+   * @param {Object} callback Callback function.
+   */
   this.req = function(url, data, callback) {
     var head = document.getElementsByTagName('HEAD')[0];
     var script = document.createElement('SCRIPT');
