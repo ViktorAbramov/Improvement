@@ -10,10 +10,9 @@
   <script src="scripts/utils.jsonp.js"></script>
   <script>
   var jsonp = new utils.Jsonp;
-  callback = jsonp.getCallbackName();
   jsonp.req('http://api.flickr.com/services/feeds/photos_public.gne',
-    {jsoncallback: callback, format: 'json'},
-    window[callback] = function(response) {
+    {format: 'json'},
+    function(response) {
       console.log(response);
     });
   </script>

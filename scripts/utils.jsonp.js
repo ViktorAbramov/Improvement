@@ -20,29 +20,36 @@ utils.Jsonp = function() {
   this.req = function(url, data, callback) {
     var head = document.getElementsByTagName('HEAD')[0];
     var script = document.createElement('SCRIPT');
-    var params = toQueryString_(data);
+    var callbackName = getCallbackName_();
+    var params = toQueryString_(data, callbackName);
     if (url[url.length] != '?') url += '?';
     script.src = url + params;
     head.appendChild(script);
+    window[callbackName] = function(response) {
+      callback(response);
+    }
   };
 
   /**
    * Generates callback's name.
    * @return {string}
-   * @public
+   * @private
    */
-  this.getCallbackName = function() {
+  function getCallbackName_() {
     return 'callback' + new Date().getTime();
   };
 
   /**
    * Generates query string from incoming params.
    * @param {!Object} data Incoming data.
+   * @param {string} callbackName Generated
+   * callback object name.
    * @return {string}
    * @private
    */
-  function toQueryString_(data) {
+  function toQueryString_(data, callbackName) {
     var paramPairs_ = [];
+    paramPairs_.push('jsoncallback=' + callbackName);
     for (var key in data) {
       paramPairs_.push(key + '=' + data[key]);
     }
