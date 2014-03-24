@@ -24,7 +24,6 @@ utils.Jsonp = function() {
     if (url[url.length] != '?') url += '?';
     script.src = url + params;
     head.appendChild(script);
-    callback;
   };
 
   /**
