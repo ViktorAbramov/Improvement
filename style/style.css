@@ -8,11 +8,24 @@ body, html {
 }
 
 .head-menu {
-	background: #D8D8D8;
 	border-right: 2px solid grey;
 	float: left;
 	height: 100%;
 	width: 250px;
+	position: relative;
+}
+
+.head-menu:after {
+	background: #D8D8D8;
+	border-right: 2px solid grey;
+	content: "";
+	height: 100%;
+	left: 0;
+	position:fixed;
+	top: 0;
+	width: 250px;
+	z-index: -20;
+
 }
 
 .nav li {
