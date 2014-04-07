@@ -1,5 +1,4 @@
 
-
 /** @constructor */
 utils.Gallery = function() {
 
@@ -42,7 +41,7 @@ utils.Gallery = function() {
   }
 
   /**
-   * Transform searchin keywords into keywords atrray.
+   * Transform searchin keywords into keywords array.
    * @param {string} keywords Searching keywords.
    * @return {!Array}
    * @private
