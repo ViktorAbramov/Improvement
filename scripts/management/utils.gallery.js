@@ -63,9 +63,9 @@ utils.Gallery = function() {
       var container = document.getElementById(CONTAINER_ID);
     if (opt_images && opt_images.length) {
       container.innerHTML = '';
-      /** @type {number} */var length = opt_images.length;
+      /** @type {number} */ var length = opt_images.length;
       for (/** @type {number} */ var i = 0; i < length; i++) {
-        /** type {!Object} */var image = opt_images[i];
+        /** type {!Object} */ var image = opt_images[i];
         container.appendChild(drawImage_(image));
       }
     } else {
