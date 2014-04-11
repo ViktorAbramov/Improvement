@@ -3,16 +3,10 @@
 /**
  * @namespace Defines namespace for 'utils' package.
  */
-var utils = {
-
-  init: function() {
-    utils.jsonp = new utils.Jsonp;
-  }
-
-};
+var utils = {};
 
 /** @constructor */
-utils.Jsonp =  function() {
+utils.Jsonp = function() {
 
   /**
    * @type {string}
@@ -27,10 +21,10 @@ utils.Jsonp =  function() {
    * @param {Object} callback Callback function.
    */
   this.req = function(url, data, callback) {
-    var head = document.getElementsByTagName('HEAD')[0];
-    var script = document.createElement('SCRIPT');
-    var callbackName = getCallbackName_();
-    var params = toQueryString_(data, callbackName);
+    /** @type {Element} */ var head = document.getElementsByTagName('HEAD')[0];
+    /** @type {Element} */ var script = document.createElement('SCRIPT');
+    /** @type {string} */ var callbackName = getCallbackName_();
+    /** @type {string} */ var params = toQueryString_(data, callbackName);
     if (url[url.length] != '?') url += '?';
     script.src = url + params;
     head.appendChild(script);
@@ -57,7 +51,7 @@ utils.Jsonp =  function() {
    * @private
    */
   function toQueryString_(data, callbackName) {
-    var paramPairs_ = [];
+    /** @type {Array}*/var paramPairs_ = [];
     paramPairs_.push('jsoncallback=' + callbackName);
     for (var key in data) {
       paramPairs_.push(key + '=' + data[key]);
@@ -66,3 +60,58 @@ utils.Jsonp =  function() {
   }
 
 };
+
+/**
+ * Register single module instance.
+ * @type {!utils.Jsonp}
+ */
+utils.jsonp = new utils.Jsonp;
+
+/** @constructor */
+utils.Message = function() {
+
+  /** @type {string}
+   * @const
+   */
+  var MESSAGE_CONTAINER_ID = 'message-container';
+
+  /** @type {!Object.<string,string>}
+   * @const
+   */
+  var COLORS = {
+    'error': '#FF9999',
+    'info': '#99FFFF'
+  };
+
+  /** @type {!Object.<string,number>}
+   * @const
+   */
+  var TIMEOUTS = {
+    'error': 2e3,
+    'info': 1e3
+  };
+
+  /**
+   * Shows message in container.
+   * @param {string} type Messages type.
+   * @param {string} text Messages text.
+   */
+  this.show = function (type, text) {
+    /** @type {Element} */
+      var container = document.getElementById(MESSAGE_CONTAINER_ID);
+    container.innerText = text;
+    container.style.display = 'block';
+    container.style.background = COLORS[type];
+    setTimeout(function() {
+      container.style.display = 'none';
+    }, TIMEOUTS[type]);
+  };
+
+};
+
+/**
+ * Register single module instance.
+ * @type {!utils.Message}
+ */
+utils.message = new utils.Message;
+

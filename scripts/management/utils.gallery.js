@@ -18,7 +18,7 @@ utils.Gallery = function() {
    * @private
    */
   function init_() {
-    var form = document.forms[0];
+    /** @type {Element} */ var form = document.forms[0];
     form.onsubmit = onsubmit_;
   }
 
@@ -28,14 +28,16 @@ utils.Gallery = function() {
    * @private
    */
   function onsubmit_() {
-    var jsonp = new utils.Jsonp;
+    /** @type {Element} */
       var searchArea = this.getElementsByTagName('INPUT')[0];
-    var searchKey = searchArea.value;
-    var tags = [];
+    /** @type {string} */ var searchKey = searchArea.value;
+    /** @type {!Array} */ var tags = [];
     if (searchKey && searchKey.length) {
+      utils.message.show('info', 'Loading...');
       tags = toCorrectTag_(searchKey);
-      jsonp.req(API_URL, {tags: tags, format: 'json'}, function(response) {
-        draw_(response['items']);
+      utils.jsonp.req(API_URL, {tags: tags, format: 'json'},
+        function(response) {
+          draw_(response['items']);
       });
     }
     return false;
@@ -57,14 +59,17 @@ utils.Gallery = function() {
    * @private
    */
   function draw_(opt_images) {
-    var container = document.getElementById(CONTAINER_ID);
-    container.innerHTML = '';
+    /** @type {Element} */
+      var container = document.getElementById(CONTAINER_ID);
     if (opt_images && opt_images.length) {
-      var length = opt_images.length;
-      for (var i = 0; i < length; i++) {
-        var image = opt_images[i];
+      container.innerHTML = '';
+      /** @type {number} */var length = opt_images.length;
+      for (/** @type {number} */ var i = 0; i < length; i++) {
+        /** type {!Object} */var image = opt_images[i];
         container.appendChild(drawImage_(image));
       }
+    } else {
+      utils.message.show('error', 'There are no images with entered tags.');
     }
   }
 
@@ -75,7 +80,7 @@ utils.Gallery = function() {
    * @private
    */
   function drawImage_(image) {
-    var picture = document.createElement('IMG');
+    /** @type {Element} */ var picture = document.createElement('IMG');
     picture.src = image['media']['m'];
     return picture;
   }
