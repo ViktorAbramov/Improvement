@@ -1,11 +1,11 @@
 
 /**
- * @namespace Defines namespace for 'gallery' package.
+ * @namespace Defines namespace for 'app' package.
  */
 var app = {
 
   init: function() {
-    app.gallery = new app.Gallery;
+    /** type{!app.Gallery} */app.gallery = new app.Gallery;
   }
   
 };

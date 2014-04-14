@@ -13,8 +13,16 @@ app.Gallery = function() {
    */
   var CONTAINER_ID = 'image-container';
 
+  /** 
+   * @type{!utils.Message}
+   * @private
+   */
   var messages = new utils.Message;
 
+  /** 
+   * @type{!utils.Jsonp}
+   * @private
+   */
   var jsonp = new utils.Jsonp;
 
   /**
