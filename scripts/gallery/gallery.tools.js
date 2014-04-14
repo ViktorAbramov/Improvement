@@ -1,7 +1,6 @@
 
-
 /** @constructor */
-utils.Gallery = function() {
+gallery.Tools = function() {
 
   /** @type {string}
    * @conts
@@ -18,7 +17,8 @@ utils.Gallery = function() {
    * @private
    */
   function init_() {
-    /** @type {Element} */ var form = document.forms[0];
+    container_ = document.getElementById(CONTAINER_ID);
+    /** @type {Element} */ var form = document.forms['search-form'];
     form.onsubmit = onsubmit_;
   }
 
@@ -29,16 +29,19 @@ utils.Gallery = function() {
    */
   function onsubmit_() {
     /** @type {Element} */
-      var searchArea = this.getElementsByTagName('INPUT')[0];
+      var searchArea = this.elements['searching'];
     /** @type {string} */ var searchKey = searchArea.value;
     /** @type {!Array} */ var tags = [];
     if (searchKey && searchKey.length) {
+      container_.innerHTML = '';
       utils.message.show('info', 'Loading...');
       tags = toCorrectTag_(searchKey);
       utils.jsonp.req(API_URL, {tags: tags, format: 'json'},
         function(response) {
           draw_(response['items']);
       });
+    } else {
+      utils.message.show('info', 'Please enter keywords for search');
     }
     return false;
   }
@@ -55,18 +58,16 @@ utils.Gallery = function() {
 
   /**
    * Draws images from server's response.
-   * @param {?Object} opt_images Object with images.
+   * @param {?Object} images Object with images.
    * @private
    */
-  function draw_(opt_images) {
+  function draw_(images) {
     /** @type {Element} */
-      var container = document.getElementById(CONTAINER_ID);
-    if (opt_images && opt_images.length) {
-      container.innerHTML = '';
-      /** @type {number} */ var length = opt_images.length;
+    if (images && images.length) {
+      /** @type {number} */ var length = images.length;
       for (/** @type {number} */ var i = 0; i < length; i++) {
-        /** type {!Object} */ var image = opt_images[i];
-        container.appendChild(drawImage_(image));
+        /** type {!Object} */ var image = images[i];
+        container_.appendChild(createImage_(image));
       }
     } else {
       utils.message.show('error', 'There are no images with entered tags.');
@@ -79,17 +80,18 @@ utils.Gallery = function() {
    * @return {Element}
    * @private
    */
-  function drawImage_(image) {
+  function createImage_(image) {
     /** @type {Element} */ var picture = document.createElement('IMG');
     picture.src = image['media']['m'];
     return picture;
   }
 
-  init_();
-};
+  /**
+   * @type {Element}
+   * @private
+   */
+  var container_ = null;
 
-/**
- * Register single module instance.
- * @type {!utils.Gallery}
- */
-utils.gallery = new utils.Gallery;
+  init_();
+
+};
