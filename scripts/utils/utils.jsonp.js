@@ -55,12 +55,6 @@ utils.Jsonp = function() {
 
 };
 
-/**
- * Register single module instance.
- * @type {!utils.Jsonp}
- */
-utils.jsonp = new utils.Jsonp;
-
 /** @constructor */
 utils.Message = function() {
 
@@ -102,4 +96,4 @@ utils.Message = function() {
   };
 
 };
- 
+  

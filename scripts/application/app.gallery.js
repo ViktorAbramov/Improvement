@@ -1,6 +1,7 @@
 
+
 /** @constructor */
-gallery.Tools = function() {
+app.Gallery = function() {
 
   /** @type {string}
    * @conts
@@ -11,6 +12,10 @@ gallery.Tools = function() {
    * @conts
    */
   var CONTAINER_ID = 'image-container';
+
+  var messages = new utils.Message;
+
+  var jsonp = new utils.Jsonp;
 
   /**
    * Initializes module gallery.
@@ -34,14 +39,14 @@ gallery.Tools = function() {
     /** @type {!Array} */ var tags = [];
     if (searchKey && searchKey.length) {
       container_.innerHTML = '';
-      utils.message.show('info', 'Loading...');
+      messages.show('info', 'Loading...');
       tags = toCorrectTag_(searchKey);
-      utils.jsonp.req(API_URL, {tags: tags, format: 'json'},
+      jsonp.req(API_URL, {tags: tags, format: 'json'},
         function(response) {
           draw_(response['items']);
       });
     } else {
-      utils.message.show('info', 'Please enter keywords for search');
+      messages.show('info', 'Please enter keywords for search');
     }
     return false;
   }
@@ -70,7 +75,7 @@ gallery.Tools = function() {
         container_.appendChild(createImage_(image));
       }
     } else {
-      utils.message.show('error', 'There are no images with entered tags.');
+      messages.show('error', 'There are no images with entered tags.');
     }
   }
 
@@ -93,5 +98,4 @@ gallery.Tools = function() {
   var container_ = null;
 
   init_();
-
 };

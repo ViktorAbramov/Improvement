@@ -4,10 +4,5 @@
  */
 var utils = {
 
-  init: function() {
-    utils.message = new utils.Message;
-    utils.jsonp = new utils.Jsonp;
-  }
-
 };
 

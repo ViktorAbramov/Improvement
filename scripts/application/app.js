@@ -2,8 +2,10 @@
 /**
  * @namespace Defines namespace for 'gallery' package.
  */
-var gallery = {
+var app = {
+
   init: function() {
-    gallery.tools = new gallery.Tools;
+    app.gallery = new app.Gallery;
   }
+  
 };
