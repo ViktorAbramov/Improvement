@@ -25,6 +25,8 @@ app.Gallery = function() {
    */
   var jsonp_ = new utils.Jsonp;
 
+  var storage_ = new utils.Storage;
+
   /**
    * Initializes module gallery.
    * @private
@@ -32,6 +34,7 @@ app.Gallery = function() {
   function init_() {
     container_ = document.getElementById(CONTAINER_ID);
     /** @type {Element} */ var form = document.forms['search-form'];
+    storage_.set('amber', null);
     form.onsubmit = onsubmit_;
   }
 
@@ -53,6 +56,8 @@ app.Gallery = function() {
         function(response) {
           draw_(response['items']);
       });
+      storage_.set('tags', storage_.get('tags').push(tags));
+      console.log(storage_.get('tags'));
     } else {
       messages_.show('info', 'Please enter keywords for search');
     }
@@ -60,7 +65,7 @@ app.Gallery = function() {
   }
 
   /**
-   * Transform searchin keywords into keywords atrray.
+   * Transform searchin keywords into keywords array.
    * @param {string} keywords Searching keywords.
    * @return {!Array}
    * @private
@@ -88,7 +93,7 @@ app.Gallery = function() {
   }
 
   /**
-   * Draws single image.
+   * Creates single image.
    * @param {!Object} image Image's object.
    * @return {Element}
    * @private
