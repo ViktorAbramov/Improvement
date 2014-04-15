@@ -17,13 +17,13 @@ app.Gallery = function() {
    * @type{!utils.Message}
    * @private
    */
-  var messages = new utils.Message;
+  var messages_ = new utils.Message;
 
   /** 
    * @type{!utils.Jsonp}
    * @private
    */
-  var jsonp = new utils.Jsonp;
+  var jsonp_ = new utils.Jsonp;
 
   /**
    * Initializes module gallery.
@@ -47,14 +47,14 @@ app.Gallery = function() {
     /** @type {!Array} */ var tags = [];
     if (searchKey && searchKey.length) {
       container_.innerHTML = '';
-      messages.show('info', 'Loading...');
+      messages_.show('info', 'Loading...');
       tags = toCorrectTag_(searchKey);
-      jsonp.req(API_URL, {tags: tags, format: 'json'},
+      jsonp_.req(API_URL, {tags: tags, format: 'json'},
         function(response) {
           draw_(response['items']);
       });
     } else {
-      messages.show('info', 'Please enter keywords for search');
+      messages_.show('info', 'Please enter keywords for search');
     }
     return false;
   }
@@ -83,7 +83,7 @@ app.Gallery = function() {
         container_.appendChild(createImage_(image));
       }
     } else {
-      messages.show('error', 'There are no images with entered tags.');
+      messages_.show('error', 'There are no images with entered tags.');
     }
   }
 

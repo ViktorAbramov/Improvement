@@ -87,7 +87,7 @@ utils.Message = function() {
   this.show = function (type, text) {
     /** @type {Element} */
       var container = document.getElementById(MESSAGE_CONTAINER_ID);
-    container.innerText = text;
+    container.innerHTML = text;
     container.style.display = 'block';
     container.style.background = COLORS[type];
     setTimeout(function() {

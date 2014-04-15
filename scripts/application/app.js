@@ -5,7 +5,7 @@
 var app = {
 
   init: function() {
-    /** type{!app.Gallery} */app.gallery = new app.Gallery;
+    new app.Gallery;
   }
   
 };
