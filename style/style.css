@@ -8,11 +8,23 @@ body, html {
 }
 
 .head-menu {
-	background: #D8D8D8;
 	border-right: 2px solid grey;
 	float: left;
 	height: 100%;
 	width: 250px;
+	position: relative;
+}
+
+.head-menu:after {
+	background: #D8D8D8;
+	border-right: 2px solid grey;
+	content: "";
+	height: 100%;
+	left: 0;
+	position:fixed;
+	top: 0;
+	width: 250px;
+	z-index: -20;
 }
 
 .nav li {
@@ -53,4 +65,26 @@ body, html {
 	margin: 20px;
 	height: 200px;
 	width: 200px;
+	-webkit-transition: 0.2s ease;
+	-moz-transition: 0.2s ease;
+	opacity: 0.9;
+}
+
+#image-container img:hover {
+	-webkit-transform: scale(1.2, 1.2);
+	-moz-transform: scale(1.2, 1.2);
+	opacity: 1;
+}
+
+#message-container {
+	background: #FF9999;
+	border: 1px solid black;
+	border-radius: 7px;
+	display: none;
+	left: 50%;
+	opacity: 0.7;
+	position: fixed;
+	padding: 2px; 
+	top: 5%;
+	z-index: 10;
 }

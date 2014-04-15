@@ -8,8 +8,8 @@
 <body>
 <div class="head-menu">
 
-  <form class="search" onsubmit="return false">
-    <input type="text"/>
+  <form name="search-form" class="search" onsubmit="return false">
+    <input name="searching" type="text"/>
     <input type="submit" value="Search"/>
   </form>
   <ul class="nav">
@@ -19,7 +19,7 @@
     <li><a href="#">javascript</a></li>
   </ul>
 </div>
-
+<div id="message-container"></div>
 <div id="image-container">
   <img src="http://farm4.staticflickr.com/3773/13465479615_88f892bc65_m.jpg"/>
   <img src="http://farm4.staticflickr.com/3684/13465867283_2c8e815580_m.jpg"/>
@@ -36,16 +36,12 @@
 </div>
   
 
-  <script src="scripts/utils.js"></script>
-  <script src="scripts/utils.jsonp.js"></script>
-  <script>
-  var jsonp = new utils.Jsonp;
-  jsonp.req('http://api.flickr.com/services/feeds/photos_public.gne',
-    {format: 'json'},
-    function(response) {
-      console.log(response);
-    });
-  </script>
+  <script src="scripts/utils/utils.js"></script>
+  <script src="scripts/utils/utils.jsonp.js"></script>
+  <script src="scripts/application/app.js"></script>
+  <script src="scripts/application/app.gallery.js"></script>
+  <script>app.init();</script>
+
 
 </body>
 </html>
