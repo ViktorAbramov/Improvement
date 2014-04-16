@@ -54,8 +54,8 @@ app.Gallery = function() {
     /** @type {Element} */
       var searchArea = form_.elements['searching'];
     /** @type {string} */ var searchKey;
-    searchKey = !!opt_keyword.length ? opt_keyword : searchArea.value;
     /** @type {!Array} */ var tags = [];
+    searchKey = !!opt_keyword.length ? opt_keyword : searchArea.value;
     if (searchKey && searchKey.length) {
       if (!storage_.get('tags')) storage_.set('tags', []);
       container_.innerHTML = '';
@@ -116,6 +116,10 @@ app.Gallery = function() {
     return picture;
   }
 
+  /**
+   * Draws navigation panel.
+   * @private
+   */
   function drawNavPanel_() {
     /** @type {Array} */ var tags = storage_.get('tags').split(',');
     /** @type {number} */ var length = tags.length;
@@ -126,12 +130,21 @@ app.Gallery = function() {
     }
   }
 
+  /**
+   * Creates navigation panel's row.
+   * @param {string} keyword Searching keyword.
+   * @private
+   */
   function createNavRow_(keyword) {
     var row = document.createElement('LI');
     row.innerHTML = '<a href="#">' + keyword + '</a>';
     return row;
   }
 
+  /**
+   * Initializes navigation panel.
+   * @private
+   */
   function initNavPanel_() {
     var navPanel = document.getElementById(NAV_PANEL_ID);
     var rows = navPanel.getElementsByTagName('LI');
@@ -142,8 +155,12 @@ app.Gallery = function() {
     }
   }
 
+  /**
+   * Performs action on click.
+   * @private
+   */
   function clickRow_() {
-    var keyword = this.getElementsByTagName('A')[0].innerHTML;
+    /** @type {string} */ var keyword = this.getElementsByTagName('A')[0].innerHTML;
     onsubmit_(keyword);
   }
 
