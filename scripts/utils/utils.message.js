@@ -19,7 +19,7 @@ utils.Message = function() {
    * @const
    */
   var TIMEOUTS = {
-    'error': 2e3,
+    'error': 3e3,
     'info': 1e3
   };
 
