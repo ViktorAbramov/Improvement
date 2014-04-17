@@ -67,8 +67,7 @@ app.Gallery = function() {
       container_.innerHTML = '';
       messages_.show('info', 'Loading...');
       tags = toCorrectTag_(searchKey);
-      if (!opt_keyword.length)
-        cacheKeywords_(tags);
+      if (!opt_keyword.length) cacheKeywords_(tags);
       jsonp_.req(API_URL, {tags: tags, format: 'json'},
         function(response) {
           draw_(response['items']);
@@ -91,7 +90,7 @@ app.Gallery = function() {
     while (tags.length > 10) tags.shift();
     storage_.set('tags', tags.concat(keywords));
   }
-  
+
   /**
    * Transform searchin keywords into keywords array.
    * @param {string} keywords Searching keywords.
