@@ -86,11 +86,8 @@ app.Gallery = function() {
    */
   function cacheKeywords_(keywords) {
     /** @type {Array.<string>} */ var tags;
-    if (!storage_.get('tags')) {
-      tags = keywords;
-    } else {
-      tags = (storage_.get('tags').split(',')).concat(keywords);
-    }
+    if (!storage_.get('tags')) tags = keywords;
+    else tags = (storage_.get('tags').split(',')).concat(keywords);
     while (tags.length > 10) tags.shift();
     storage_.set('tags', tags);
   }
