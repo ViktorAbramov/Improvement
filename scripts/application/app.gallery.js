@@ -3,17 +3,24 @@
 /** @constructor */
 app.Gallery = function() {
 
-  /** @type {string}
+  /** 
+   * @type {string}
    * @conts
    */
   var API_URL = 'http://api.flickr.com/services/feeds/photos_public.gne';
 
-  /** @type {string}
+  /** 
+   * @type {string}
    * @conts
    */
   var CONTAINER_ID = 'image-container';
 
+  /** 
+   * @type {string}
+   * @conts
+   */
   var NAV_PANEL_ID = 'nav-panel';
+  
   /** 
    * @type{!utils.Message}
    * @private
@@ -46,7 +53,7 @@ app.Gallery = function() {
 
   /**
    * Performs onsubmit action.
-   * @param {string} opt_keyword Keyword for sarching
+   * @param {string} opt_keyword Keyword for sarching.
    * @return {boolean}
    * @private
    */
@@ -133,6 +140,7 @@ app.Gallery = function() {
   /**
    * Creates navigation panel's row.
    * @param {string} keyword Searching keyword.
+   * @return {Element}
    * @private
    */
   function createNavRow_(keyword) {
