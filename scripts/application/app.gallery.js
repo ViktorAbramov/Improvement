@@ -47,7 +47,6 @@ app.Gallery = function() {
     container_ = document.getElementById(CONTAINER_ID);
     form_ = document.forms['search-form'];
     form_.onsubmit = onsubmit_;
-    drawNavPanel_();
     initNavPanel_();
   }
 
@@ -69,12 +68,11 @@ app.Gallery = function() {
       messages_.show('info', 'Loading...');
       tags = toCorrectTag_(searchKey);
       if (!opt_keyword.length)
-        storage_.set('tags', (storage_.get('tags').split(',')).concat(tags));
+        cacheKeywords_(tags);
       jsonp_.req(API_URL, {tags: tags, format: 'json'},
         function(response) {
           draw_(response['items']);
       });
-      drawNavPanel_();
       initNavPanel_();
       searchArea.value = '';
     } else {
@@ -83,6 +81,17 @@ app.Gallery = function() {
     return false;
   }
 
+  /**
+   * Caches searching keywords.
+   * @param {!Array} keywords Searching keywords.
+   * @prtivate
+   */
+  function cacheKeywords_(keywords) {
+    /** @type {!Array.<string>} */ var tags = storage_.get('tags').split(',');
+    while (tags.length > 10) tags.shift();
+    storage_.set('tags', tags.concat(keywords));
+  }
+  
   /**
    * Transform searchin keywords into keywords array.
    * @param {string} keywords Searching keywords.
@@ -154,6 +163,7 @@ app.Gallery = function() {
    * @private
    */
   function initNavPanel_() {
+    drawNavPanel_();
     /** @type {Element} */ var navPanel = document.getElementById(NAV_PANEL_ID);
     /** @type {NodeList} */ var rows = navPanel.getElementsByTagName('LI');
     /** @type {number} */var length = rows.length;
