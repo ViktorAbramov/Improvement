@@ -63,7 +63,6 @@ app.Gallery = function() {
     /** @type {!Array} */ var tags = [];
     searchKey = !!opt_keyword.length ? opt_keyword : searchArea.value;
     if (searchKey && searchKey.length) {
-      if (!storage_.get('tags')) storage_.set('tags', []);
       container_.innerHTML = '';
       messages_.show('info', 'Loading...');
       tags = toCorrectTag_(searchKey);
@@ -86,9 +85,14 @@ app.Gallery = function() {
    * @prtivate
    */
   function cacheKeywords_(keywords) {
-    /** @type {!Array.<string>} */ var tags = storage_.get('tags').split(',');
+    /** @type {Array.<string>} */ var tags;
+    if (!storage_.get('tags')) {
+      tags = keywords;
+    } else {
+      tags = (storage_.get('tags').split(',')).concat(keywords);
+    }
     while (tags.length > 10) tags.shift();
-    storage_.set('tags', tags.concat(keywords));
+    storage_.set('tags', tags);
   }
 
   /**
@@ -136,12 +140,15 @@ app.Gallery = function() {
    * @private
    */
   function drawNavPanel_() {
-    /** @type {Array} */ var tags = storage_.get('tags').split(',');
-    /** @type {number} */ var length = tags.length;
-    /** @type {Element} */ var navPanel = document.getElementById(NAV_PANEL_ID);
-    navPanel.innerHTML = '';
-    for (/** @type {number} */ var i = 0; i < length; i++) {
-      navPanel.appendChild(createNavRow_(tags[i]));
+    if (storage_.get('tags')) {
+      /** @type {Array} */ var tags = storage_.get('tags').split(',');
+      /** @type {number} */ var length = tags.length;
+      /** @type {Element} */
+        var navPanel = document.getElementById(NAV_PANEL_ID);
+      navPanel.innerHTML = '';
+      for (/** @type {number} */ var i = 0; i < length; i++) {
+        navPanel.appendChild(createNavRow_(tags[i]));
+      }
     }
   }
 
