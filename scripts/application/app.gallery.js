@@ -136,7 +136,7 @@ app.Gallery = function() {
    * @private
    */
   function createNavRow_(keyword) {
-    var row = document.createElement('LI');
+    /** @type {Element} */ var row = document.createElement('LI');
     row.innerHTML = '<a href="#">' + keyword + '</a>';
     return row;
   }
@@ -146,9 +146,9 @@ app.Gallery = function() {
    * @private
    */
   function initNavPanel_() {
-    var navPanel = document.getElementById(NAV_PANEL_ID);
-    var rows = navPanel.getElementsByTagName('LI');
-    var length = rows.length;
+    /** @type {Element} */ var navPanel = document.getElementById(NAV_PANEL_ID);
+    /** @type {NodeList} */ var rows = navPanel.getElementsByTagName('LI');
+    /** @type {number} */var length = rows.length;
     for (var i = 0; i < length; i++) {
       var row = rows[i];
       row.onclick = clickRow_;
@@ -160,7 +160,8 @@ app.Gallery = function() {
    * @private
    */
   function clickRow_() {
-    /** @type {string} */ var keyword = this.getElementsByTagName('A')[0].innerHTML;
+    /** @type {string} */
+      var keyword = this.getElementsByTagName('A')[0].innerHTML;
     onsubmit_(keyword);
   }
 
@@ -170,6 +171,10 @@ app.Gallery = function() {
    */
   var container_ = null;
 
+  /**
+   * @type {Element}
+   * @private
+   */
   var form_ = null;
 
   init_();
