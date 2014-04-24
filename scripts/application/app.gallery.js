@@ -47,7 +47,7 @@ app.Gallery = function() {
     container_ = document.getElementById(CONTAINER_ID);
     form_ = document.forms['search-form'];
     form_.onsubmit = onsubmit_;
-    // initNavPanel_();
+    initNavPanel_();
   }
 
   /**
@@ -63,16 +63,14 @@ app.Gallery = function() {
     /** @type {!Array} */ var tags = [];
     searchKey = !!opt_keyword.length ? opt_keyword : searchArea.value;
     if (searchKey && searchKey.length) {
-      container_.innerHTML = '';
       messages_.show('info', 'Loading...');
       tags = toCorrectTag_(searchKey);
-      // if (!opt_keyword.length) cacheKeywords_(tags);
       jsonp_.req(API_URL, {tags: tags, format: 'json'},
         function(response) {
           draw_(response['items']);
           cacheResponse_(tags.split(','), response['items']);
       });
-      // initNavPanel_();
+      initNavPanel_();
       searchArea.value = '';
     } else {
       messages_.show('error', 'Please enter keywords for search');
@@ -108,6 +106,7 @@ app.Gallery = function() {
    * @private
    */
   function draw_(images) {
+    container_.innerHTML = '';
     /** @type {Element} */
     if (images && images.length) {
       /** @type {number} */ var length = images.length;
@@ -137,14 +136,14 @@ app.Gallery = function() {
    * @private
    */
   function drawNavPanel_() {
-    if (storage_.get('tags')) {
-      /** @type {Array} */ var tags = storage_.get('tags').split(',');
-      /** @type {number} */ var length = tags.length;
+    if (storage_.get('cache')) {
+      /** @type {Array} */ var tags = JSON.parse(storage_.get('cache'));
       /** @type {Element} */
         var navPanel = document.getElementById(NAV_PANEL_ID);
       navPanel.innerHTML = '';
-      for (/** @type {number} */ var i = 0; i < length; i++) {
-        navPanel.appendChild(createNavRow_(tags[i]));
+      for (var key in tags) {
+        console.log(key);
+        navPanel.appendChild(createNavRow_(key));
       }
     }
   }
@@ -183,7 +182,8 @@ app.Gallery = function() {
   function clickRow_() {
     /** @type {string} */
       var keyword = this.getElementsByTagName('A')[0].innerHTML;
-    onsubmit_(keyword);
+    draw_(JSON.parse(storage_.get('cache'))[keyword]);
+    initNavPanel_();
   }
 
   /**
