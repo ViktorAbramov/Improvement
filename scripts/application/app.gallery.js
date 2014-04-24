@@ -47,7 +47,7 @@ app.Gallery = function() {
     container_ = document.getElementById(CONTAINER_ID);
     form_ = document.forms['search-form'];
     form_.onsubmit = onsubmit_;
-    initNavPanel_();
+    // initNavPanel_();
   }
 
   /**
@@ -66,12 +66,13 @@ app.Gallery = function() {
       container_.innerHTML = '';
       messages_.show('info', 'Loading...');
       tags = toCorrectTag_(searchKey);
-      if (!opt_keyword.length) cacheKeywords_(tags);
+      // if (!opt_keyword.length) cacheKeywords_(tags);
       jsonp_.req(API_URL, {tags: tags, format: 'json'},
         function(response) {
           draw_(response['items']);
+          cacheResponse_(tags.split(','), response['items']);
       });
-      initNavPanel_();
+      // initNavPanel_();
       searchArea.value = '';
     } else {
       messages_.show('error', 'Please enter keywords for search');
@@ -79,17 +80,16 @@ app.Gallery = function() {
     return false;
   }
 
-  /**
-   * Caches searching keywords.
-   * @param {!Array} keywords Searching keywords.
-   * @prtivate
-   */
-  function cacheKeywords_(keywords) {
-    /** @type {Array.<string>} */ var tags;
-    if (!storage_.get('tags')) tags = keywords;
-    else tags = (storage_.get('tags').split(',')).concat(keywords);
-    while (tags.length > 10) tags.shift();
-    storage_.set('tags', tags);
+  function cacheResponse_(tags, response) {
+    /** @type {Object} */ var cache_;
+    /** @type {number} */ var length = tags.length; 
+    if (!storage_.get('cache')) cache_ = {};
+    else cache_ = JSON.parse(storage_.get('cache'));
+    for (/** @type {number} */ var i = 0; i < length;) {
+      var tag = tags[i++];
+      if (!(tag in cache_)) cache_[tag] = response; 
+    }
+    storage_.set('cache', JSON.stringify(cache_));
   }
 
   /**
