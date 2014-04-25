@@ -69,8 +69,8 @@ app.Gallery = function() {
         function(response) {
           draw_(response['items']);
           cacheResponse_(tags.split(','), response['items']);
+          initNavPanel_();
       });
-      initNavPanel_();
       searchArea.value = '';
     } else {
       messages_.show('error', 'Please enter keywords for search');
@@ -142,7 +142,6 @@ app.Gallery = function() {
         var navPanel = document.getElementById(NAV_PANEL_ID);
       navPanel.innerHTML = '';
       for (var key in tags) {
-        console.log(key);
         navPanel.appendChild(createNavRow_(key));
       }
     }
