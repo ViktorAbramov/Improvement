@@ -5,19 +5,16 @@ app.Gallery = function() {
 
   /** 
    * @type {string}
-   * @conts
    */
   var API_URL = 'http://api.flickr.com/services/feeds/photos_public.gne';
 
   /** 
    * @type {string}
-   * @conts
    */
   var CONTAINER_ID = 'image-container';
 
   /** 
    * @type {string}
-   * @conts
    */
   var NAV_PANEL_ID = 'nav-panel';
   
@@ -78,6 +75,11 @@ app.Gallery = function() {
     return false;
   }
 
+  /**
+   * Saves data in storage.
+   * @param {Arrat} tags Array of entered keywords.
+   * @param {Object} response Response object.
+   */
   function cacheResponse_(tags, response) {
     /** @type {Object} */ var cache_;
     /** @type {number} */ var length = tags.length; 
@@ -91,9 +93,9 @@ app.Gallery = function() {
   }
 
   /**
-   * Transform searchin keywords into keywords array.
+   * Transform searched keywords into keywords array.
    * @param {string} keywords Searching keywords.
-   * @return {!Array}
+   * @return {!Array} Returns keyword's array.
    * @private
    */
   function toCorrectTag_(keywords) {
@@ -122,7 +124,7 @@ app.Gallery = function() {
   /**
    * Creates single image.
    * @param {!Object} image Image's object.
-   * @return {Element}
+   * @return {Element} Return image element.
    * @private
    */
   function createImage_(image) {
@@ -141,7 +143,7 @@ app.Gallery = function() {
       /** @type {Element} */
         var navPanel = document.getElementById(NAV_PANEL_ID);
       navPanel.innerHTML = '';
-      for (var key in tags) {
+      for (/** @type {string} */ var key in tags) {
         navPanel.appendChild(createNavRow_(key));
       }
     }
@@ -150,7 +152,7 @@ app.Gallery = function() {
   /**
    * Creates navigation panel's row.
    * @param {string} keyword Searching keyword.
-   * @return {Element}
+   * @return {Element} Returns table row element.
    * @private
    */
   function createNavRow_(keyword) {
@@ -167,15 +169,15 @@ app.Gallery = function() {
     drawNavPanel_();
     /** @type {Element} */ var navPanel = document.getElementById(NAV_PANEL_ID);
     /** @type {NodeList} */ var rows = navPanel.getElementsByTagName('LI');
-    /** @type {number} */var length = rows.length;
-    for (var i = 0; i < length; i++) {
-      var row = rows[i];
+    /** @type {number} */ var length = rows.length;
+    for (/** @type {number} */ var i = 0; i < length; i++) {
+      /** @type {Element} */ var row = rows[i];
       row.onclick = clickRow_;
     }
   }
 
   /**
-   * Performs action on click.
+   * Performs onclick action.
    * @private
    */
   function clickRow_() {
@@ -186,12 +188,14 @@ app.Gallery = function() {
   }
 
   /**
+   * Image container.
    * @type {Element}
    * @private
    */
   var container_ = null;
 
   /**
+   * Search form. 
    * @type {Element}
    * @private
    */

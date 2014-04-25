@@ -29,11 +29,11 @@ utils.Jsonp = function() {
 
   /**
    * Generates callback's name.
-   * @return {string}
+   * @return {string} Returns callback name.
    * @private
    */
   function getCallbackName_() {
-    return 'callback' + new Date().getTime();
+    return 'callback' + +new Date();
   }
 
   /**
@@ -41,13 +41,13 @@ utils.Jsonp = function() {
    * @param {!Object} data Incoming data.
    * @param {string} callbackName Generated
    * callback object name.
-   * @return {string}
+   * @return {string} Returns query string.
    * @private
    */
   function toQueryString_(data, callbackName) {
     /** @type {Array}*/var paramPairs_ = [];
     paramPairs_.push('jsoncallback=' + callbackName);
-    for (var key in data) {
+    for (/** @type {string} */ var key in data) {
       paramPairs_.push(key + '=' + data[key]);
     }
     return paramPairs_.join(DATA_SEPARATOR);

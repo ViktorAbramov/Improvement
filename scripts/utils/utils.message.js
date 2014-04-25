@@ -7,17 +7,13 @@ utils.Message = function() {
    */
   var MESSAGE_CONTAINER_ID = 'message-container';
 
-  /** @type {!Object.<string,string>}
-   * @const
-   */
+  /** @type {!Object.<string,string>} */
   var COLORS = {
     'error': '#FF9999',
     'info': '#99FFFF'
   };
 
-  /** @type {!Object.<string,number>}
-   * @const
-   */
+  /** @type {!Object.<string,number>} */
   var TIMEOUTS = {
     'error': 3e3,
     'info': 1e3
