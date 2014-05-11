@@ -29,11 +29,11 @@ utils.Jsonp = function() {
 
   /**
    * Generates callback's name.
-   * @return {string}
+   * @return {string} Returns callback name.
    * @private
    */
   function getCallbackName_() {
-    return 'callback' + new Date().getTime();
+    return 'callback' + +new Date();
   }
 
   /**
@@ -41,59 +41,16 @@ utils.Jsonp = function() {
    * @param {!Object} data Incoming data.
    * @param {string} callbackName Generated
    * callback object name.
-   * @return {string}
+   * @return {string} Returns query string.
    * @private
    */
   function toQueryString_(data, callbackName) {
     /** @type {Array}*/var paramPairs_ = [];
     paramPairs_.push('jsoncallback=' + callbackName);
-    for (var key in data) {
+    for (/** @type {string} */ var key in data) {
       paramPairs_.push(key + '=' + data[key]);
     }
     return paramPairs_.join(DATA_SEPARATOR);
   }
 
 };
-
-/** @constructor */
-utils.Message = function() {
-
-  /** @type {string}
-   * @const
-   */
-  var MESSAGE_CONTAINER_ID = 'message-container';
-
-  /** @type {!Object.<string,string>}
-   * @const
-   */
-  var COLORS = {
-    'error': '#FF9999',
-    'info': '#99FFFF'
-  };
-
-  /** @type {!Object.<string,number>}
-   * @const
-   */
-  var TIMEOUTS = {
-    'error': 2e3,
-    'info': 1e3
-  };
-
-  /**
-   * Shows message in container.
-   * @param {string} type Messages type.
-   * @param {string} text Messages text.
-   */
-  this.show = function (type, text) {
-    /** @type {Element} */
-      var container = document.getElementById(MESSAGE_CONTAINER_ID);
-    container.innerHTML = text;
-    container.style.display = 'block';
-    container.style.background = COLORS[type];
-    setTimeout(function() {
-      container.style.display = 'none';
-    }, TIMEOUTS[type]);
-  };
-
-};
-  
