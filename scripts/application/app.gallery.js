@@ -49,16 +49,15 @@ app.Gallery = function() {
 
   /**
    * Performs onsubmit action.
-   * @param {string} opt_keyword Keyword for sarching.
    * @return {boolean}
    * @private
    */
-  function onsubmit_(opt_keyword) {
+  function onsubmit_() {
     /** @type {Element} */
       var searchArea = form_.elements['searching'];
     /** @type {string} */ var searchKey;
     /** @type {!Array} */ var tags = [];
-    searchKey = !!opt_keyword.length ? opt_keyword : searchArea.value;
+    searchKey = searchArea.value;
     if (searchKey && searchKey.length) {
       messages_.show('info', 'Loading...');
       tags = toCorrectTag_(searchKey);
