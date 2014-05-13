@@ -1,0 +1,36 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body, html {
+	height: 100%;
+}
+
+.nav-panel {
+	background-color: #FF9933;
+	display: flex;
+	height: 30px;
+	box-shadow: 0 0 3px black;
+}
+
+.nav-panel ul li {
+ 	padding-top: 5px;
+ 	display: inline-block;
+ 	position: relative;
+ 	padding-left: 20px;
+}
+
+ .nav-panel ul li:hover {
+ 	background-color: #FF6600;
+ }
+
+.nav-panel a {
+ 	text-decoration: none;
+ 	color: #F8F8F8;
+}
+
+.nav-panel form {
+ 	padding-left: 700px;
+ 	vertical-align: middle;
+}
