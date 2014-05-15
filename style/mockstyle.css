@@ -2,6 +2,7 @@
   margin: 0;
   padding: 0;
   -webkit-box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
   outline: none;
@@ -23,12 +24,12 @@ body, html {
   background: -ms-linear-gradient(top, #ffa84c 0%,#ff8e38 100%);
   background: linear-gradient(to bottom, #ffa84c 0%,#ff8e38 100%);
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffa84c', endColorstr='#ff8e38',GradientType=0 );
-  box-shadow: 1px 0 1px 0 black;  
+  box-shadow: 5px 2px 5px 0 #949494;  
 }
 
 .nav-bar ul {
   float: left;
-  list-style-type: none;
+  list-style: none;
 }
 
 .nav-bar ul li {
@@ -53,7 +54,7 @@ body, html {
   color: #E8E8E8;
   font-family: sans-serif;
   font-size: 16px;
-  font-weight: lighter;
+  font-weight: normal;
 }
 
 .search-wrapper {
@@ -136,6 +137,7 @@ body, html {
 
 .photo-container {
   float: left;
+  width: 20%;
   padding-top: 50px; 
   padding-left: 80px;
 }
@@ -167,3 +169,47 @@ body, html {
   color: #54a2d3;
 }
 
+.info-container {
+  padding-top: 50px;
+  float: right;
+  width: 78%;
+}
+
+.tab-bar {
+  border-bottom: 1px solid #a5a6a4;
+  margin-right: 150px;
+}
+
+.tab-bar ul {
+  list-style: none;
+}
+
+.tab-bar ul li {
+  font-family: serif;
+  font-weight: lighter;
+  display: inline;
+  margin-right: 15px;
+  padding: 3px 5px 0 5px; 
+}
+
+.tab-open {
+  border-bottom: 1px solid #f0f0f0;
+  border-top: 1px solid #a5a6a4;
+  border-right: 1px solid #a5a6a4;
+  border-left: 1px solid #a5a6a4;
+  border-radius: 5px 5px 0 0;
+}
+
+.tab-closed {
+  border: 1px solid #a5a6a4;
+  border-radius: 5px 5px 0 0;
+  color: white;
+  background: #939393;
+  background: -moz-linear-gradient(top, #939393 0%, #8e8e8e 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#939393), color-stop(100%,#8e8e8e));
+  background: -webkit-linear-gradient(top, #939393 0%,#8e8e8e 100%);
+  background: -o-linear-gradient(top, #939393 0%,#8e8e8e 100%);
+  background: -ms-linear-gradient(top, #939393 0%,#8e8e8e 100%);
+  background: linear-gradient(to bottom, #939393 0%,#8e8e8e 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#939393', endColorstr='#8e8e8e',GradientType=0 );
+}
