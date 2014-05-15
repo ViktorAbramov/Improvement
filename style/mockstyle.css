@@ -134,5 +134,36 @@ body, html {
   color: black;
 }
 
+.photo-container {
+  float: left;
+  padding-top: 50px; 
+  padding-left: 80px;
+}
 
+.photo-container img{
+  width: 180px;
+  height: 230px;
+  border: 4px solid white;
+  box-shadow: 2px 2px 5px 0 #949494;
+}
+
+.avatar-nav input {
+  -webkit-appearance: button;
+  -moz-appearance: button;
+  appearance: button;
+  background: #f0f0f0;
+  margin-top: 10px;
+  display: block;
+  width: 180px;
+  text-align: center;
+  font-family: "Arial";
+  font-size: 12px;
+  height: 25px;
+  border-radius: 5px;
+  border: 1px solid #cccbcb;
+}
+
+.avatar-nav input:nth-of-type(1) {
+  color: #54a2d3;
+}
 
