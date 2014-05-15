@@ -213,3 +213,24 @@ body, html {
   background: linear-gradient(to bottom, #939393 0%,#8e8e8e 100%);
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#939393', endColorstr='#8e8e8e',GradientType=0 );
 }
+
+.info-form {
+  padding-top: 40px;
+}
+
+.form-main-container {
+  float: left;
+}
+
+.form-button-container {
+  float: right;
+}
+
+.form-info-block {
+  padding-top: 20px;
+}
+
+.grid-cell {
+  display: inline;
+}
+
