@@ -74,6 +74,7 @@ body, html {
   border-radius: 11px 0 0 11px;
   border: none;
   min-height: 21px;
+  max-width: 130px;
 }
 
 .search-wrapper form a {
@@ -193,7 +194,7 @@ body, html {
 }
 
 .tab-open {
-  border-bottom: 1px solid #f0f0f0;
+  border-bottom: 2px solid #f0f0f0;
   border-top: 1px solid #a5a6a4;
   border-right: 1px solid #a5a6a4;
   border-left: 1px solid #a5a6a4;
@@ -227,10 +228,30 @@ body, html {
 }
 
 .form-info-block {
+  margin-top: 10px;
   padding-top: 20px;
+  border-top: 1px solid black;
+}
+
+.form-info-block label {
+  font-family: serif;
+  font-weight: bolder;
+  font-size: 16px;
+}
+
+.form-info-block div {
+  padding: 10px;
 }
 
 .grid-cell {
   display: inline;
 }
 
+.grid-cell input {
+  float: right;
+  margin-left: 40px;
+  min-width: 300px;
+  min-height: 25px;
+  overflow: hidden;
+  padding-left: 15px;
+}
