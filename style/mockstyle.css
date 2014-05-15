@@ -224,7 +224,16 @@ body, html {
 }
 
 .form-button-container {
+  margin-top: 30px;
   float: right;
+  margin-right: 20%;
+  }
+
+.form-button-container input {
+  display: block;
+  margin-top: 15px;
+  min-width: 250px;
+  min-height: 25px; 
 }
 
 .form-info-block {
