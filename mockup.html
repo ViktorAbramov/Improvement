@@ -1,223 +1,248 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title> Mockup page</title>
-  <link rel="stylesheet" type="text/css" href="style/mockstyle.css">
-</head>
-<body>
-  <div id="header">
-  <div class="nav-bar">
-    <ul>
-      <li><a href="#">Home</a></li>
-      <li><a href="#">Account</a></li>
-      <li><a href="#">Inbox</a></li>
-    </ul>
-  </div>
-  <div class="search-wrapper">
-    <form>
-      <input type="text" placeholder="Search..." required/>
-      <a>People</a>
-      <button type="submit">Search</button>
-    </form>
-  </div>
-</div>
-  <div id="content-container">
-    <div class="grid-row">
-      <ul class="breadcrumb">
-        <li>Someguycheg Familsson</li>
-        <li>Account Settings</li>
-      </ul>
-    </div>
-    <div class="grid-row info-contaner">
-      <div class="photo-container">
-        <img src="http://img0.liveinternet.ru/images/attach/c/6/93/770/93770162_roden.jpg"/>
-        <div class="avatar-nav">
-          <input type="submit" value="Upload a new photo"/>
-          <input type="reset" value="Delete"/>
-        </div>
-      </div>
-      <div class="info-container">
-        <div class="grid-row tab-bar">
+  <head>
+    <title> Mockup page</title>
+    <link rel="stylesheet" type="text/css" href="style/mockstyle.css">
+  </head>
+  <body>
+    <div id="grid">
+      <div id="header">
+        <div class="nav-bar">
           <ul>
-            <li class="tab-closed">Personal Information</li>
-            <li class="tab-open">Industry Specific</li>
-            <li class="tab-closed">Addresses</li>
-            <li class="tab-closed">Comp Card</li>
-            <li class="tab-closed">Settings</li>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Account</a></li>
+            <li><a href="#">Inbox</a></li>
           </ul>
         </div>
-        <div class="grid-row info-form">
+        <div class="search-wrapper">
           <form>
-            <h3>Industry Specific</h3>
-            <div class="form-main-container">
-              <div class="form-info-block">
-                <div>
+            <input type="text" placeholder="Search..." required/>
+            <a>People</a>
+            <button type="submit">Search</button>
+          </form>
+        </div>
+      </div>
+      <div id="content-container">
+        <div class="grid-row">
+          <ul class="breadcrumb">
+            <li>Someguycheg Familsson</li>
+            <li>Account Settings</li>
+          </ul>
+        </div>
+        <div id="photo-container">
+          <img src="http://img0.liveinternet.ru/images/attach/c/6/93/770/93770162_roden.jpg"/>
+          <div class="avatar-nav">
+            <input type="submit" value="Upload a new photo"/>
+            <input type="reset" value="Delete"/>
+          </div>
+        </div>
+        <div class="info-container">
+          <div class="grid-row tab-bar">
+            <ul>
+              <li class="tab-closed">Personal Information</li>
+              <li class="tab-open">Industry Specific</li>
+              <li class="tab-closed">Addresses</li>
+              <li class="tab-closed">Comp Card</li>
+              <li class="tab-closed">Settings</li>
+            </ul>
+          </div>
+          <div class="grid-row">
+            <div class="grid-row">
+              <h3>Industry Specific</h3>
+            </div>
+            <form>
+              <div class="grid-row info-block">
+                <div class="info-block-part">
                   <div class="grid-row">
-                    <div class="grid-cell">
-                      <label>Alternative names:</label>
+                    <div class=" grid-cell cell-span3">
+                      <label>Alternative Names:</label>
                     </div>
-                    <div class="grid-cell">
+                    <div class="grid-cell cell-span4 info-text">
                       <input type="text"/>
                     </div>
+                    <div class="grid-cell cell-span1 plus-button">
+                      <button onclick="return false"><span></span></button>
                     </div>
-                    <div class="grid-row">
-                      <div class="grid-cell">
-                        <input type="text"/>
-                      </div>                 
-                    </div>
+                  </div>
                   <div class="grid-row">
-                    <div class="grid-cell">
+                    <div class="grid-cell cell-span4 info-text no-label">
                       <input type="text"/>
-                    </div>                 
+                    </div>
+                  </div>
+                  <div class="grid-row">
+                    <div class="grid-cell cell-span4 info-text no-label">
+                      <input type="text"/>
+                    </div>
                   </div>
                 </div>
-                <div>
+                <div class="info-block-part">
                   <div class="grid-row">
-                    <div class="grid-cell">
+                    <div class=" grid-cell cell-span3">
                       <label>Nicknames:</label>
                     </div>
-                    <div class="grid-cell">
+                    <div class="grid-cell cell-span4 info-text">
                       <input type="text"/>
+                    </div>
+                    <div class="grid-cell cell-span1 plus-button">
+                      <button onclick="return false"><span></span></button>
                     </div>
                   </div>
                   <div class="grid-row">
-                    <div class="grid-cell">
+                    <div class="grid-cell cell-span4 info-text no-label">
                       <input type="text"/>
-                    </div>                 
+                    </div>
                   </div>
                 </div>
               </div>
-              <div class="form-info-block">
-                <div>
+              <div class="grid-row info-block">
+                <div class="info-block-part">
                   <div class="grid-row">
-                    <div class="grid-cell">
+                    <div class=" grid-cell cell-span3">
                       <label>Profession:</label>
                     </div>
-                    <div class="grid-cell">
+                    <div class="grid-cell cell-span4 info-text">
                       <input type="text"/>
+                    </div>
+                    <div class="grid-cell cell-span1 plus-button">
+                      <button onclick="return false"><span></span></button>
                     </div>
                   </div>
                   <div class="grid-row">
-                    <div class="grid-cell">
+                    <div class="grid-cell cell-span4 info-text no-label">
                       <input type="text"/>
-                    </div>                 
+                    </div>
                   </div>
                 </div>
-                <div>
+                <div class="info-block-part">
                   <div class="grid-row">
-                    <div class="grid-cell">
+                    <div class=" grid-cell cell-span3">
                       <label>Special Skills:</label>
                     </div>
-                    <div class="grid-cell">
+                    <div class="grid-cell cell-span4 info-text">
                       <textarea></textarea>
                     </div>
                   </div>
                 </div>
-                 <div>
+                <div class="info-block-part">
                   <div class="grid-row">
-                    <div class="grid-cell">
+                    <div class=" grid-cell cell-span3">
                       <label>Special Expertise:</label>
                     </div>
-                    <div class="grid-cell">
+                    <div class="grid-cell cell-span4 info-text">
                       <textarea></textarea>
                     </div>
                   </div>
                 </div>
               </div>
-              <div class="form-info-block">
-                <div class="grid-row">
-                  <div class="grid-cell">
+              <div class="grid-row info-block">
+                <div class="info-block-part">
+                  <div class="grid-row">
+                    <div class=" grid-cell cell-span3">
                       <label>Driver License:</label>
                     </div>
-                    <div class="radio-label">
-                      <label><input type="radio" name="license" value="1"/>Valid</label>
-                      <label><input type="radio" name="license" value="0"/>Not Valid</label>
+                    <div class="grid-cell cell-span1 info-radio">
+                      <label><input name="license" type="radio"/>Valid</label>
                     </div>
+                    <div class="grid-cell cell-span1 info-radio">
+                      <label><input name="license" type="radio"/>Not Valid</label>
+                    </div>
+                  </div>
                 </div>
                 <div class="grid-row">
-                  <div class="grid-cell">
+                  <div class="grid-row info-block-part">
+                    <div class=" grid-cell cell-span3">
                       <label>Standart Licenses:</label>
                     </div>
-                    <div class=" grid-cell form-select">
+                    <div class="grid-cell cell-span4 info-select">
                       <select>
-                        <option value="passenger">Passenger car</option>
-                        <option value="truck">Truck</option>
+                        <option>Passanger Car</option>
+                        <option>Truck</option>
                       </select>
                     </div>
+                  </div>
                 </div>
                 <div class="grid-row">
-                  <div class="grid-cell">
-                      <label>Driver's License Type:</label>
+                  <div class="grid-row info-block-part">
+                    <div class=" grid-cell cell-span3">
+                      <label>Driver License's Type:</label>
                     </div>
-                    <div class=" grid-cell form-select">
+                    <div class="grid-cell cell-span4 info-select">
                       <select>
-                        <option value="a">Class A</option>
-                        <option value="b">Class B</option>
-                        <option value="c">Class C</option>
-                        <option value="d">Class D</option>
+                        <option>Class A</option>
+                        <option>Class B</option>
+                        <option>Class C</option>
+                        <option>Class D</option>
                       </select>
                     </div>
-                </div>
-                <div class="grid-row">
-                  <div class="grid-cell">
-                      <label>Driver's Something:</label>
-                    </div>
-                    <div class=" grid-cell form-select">
-                      <select>
-                        <option value="metal">M (Metal Coil)</option>
-                        <option value="moto">Motocycle</option>
-                      </select>
-                    </div>
-                </div>
-              </div>
-              <div class="form-info-block">
-                <div class="grid-row">
-                  <div class="grid-cell">
-                      <label>Passport:</label>
-                  </div>
-                  <div class="radio-label passport">
-                    <label><input type="radio" name="passport" value="1"/>Valid</label>
-                    <label><input type="radio" name="passport" value="0"/>Not Valid</label>
-                  </div>
-                </div>
-                <div class="grid-row">
-                  <div class="grid-cell">
-                      <label>Passport Travel Avail.:</label>
-                  </div>
-                  <div class="radio-label travel">
-                    <label><input type="radio" name="travel" value="1"/>Yes</label>
-                    <label><input type="radio" name="travel" value="0"/>No</label>
-                  </div>
-                </div>
-                <div class="grid-row">
-                  <div class="grid-cell">
-                      <label>Travel Availability:</label>
-                  </div>
-                  <div class="checkbox-label">
-                    <label><input type="checkbox" value="state"/>In-state</label>
-                  </div>
-                </div>
-                <div class="grid-row">
-                  <div class="checkbox-label">
-                    <label><input type="checkbox" value="continental"/>Continental</label>
-                  </div>
-                </div>
-                <div class="grid-row">
-                  <div class="checkbox-label">
-                    <label><input type="checkbox" value="international"/>International</label>
                   </div>
                 </div>
               </div>
-            </div>
+              <div class="grid-row info-block">
+                <div class="grid-row info-block-part">
+                  <div class=" grid-cell cell-span3">
+                    <label>Passport:</label>
+                  </div>
+                  <div class="grid-cell cell-span1 info-radio">
+                    <label><input name="passport" type="radio"/>Valid</label>
+                  </div>
+                  <div class="grid-cell cell-span1 info-radio">
+                    <label><input name="passport" type="radio"/>Not Valid</label>
+                  </div>
+                </div>
+                <div class="grid-row info-block-part">
+                  <div class=" grid-cell cell-span3">
+                    <label>Passport Travel Avail.:</label>
+                  </div>
+                  <div class="grid-cell cell-span1 info-radio">
+                    <label><input name="travel" type="radio"/>Yes</label>
+                  </div>
+                  <div class="grid-cell cell-span1 info-radio">
+                    <label><input name="travel" type="radio"/>No</label>
+                  </div>
+                </div>
+                <div class="grid-row info-block-part">
+                  <div class=" grid-cell cell-span3">
+                    <label>Travel Availability:</label>
+                  </div>
+                  <div class="grid-cell cell-span2 info-checkbox">
+                    <label><input name="travel-avail" type="checkbox"/>In-State</label>
+                  </div>
+                </div>
+              <div class="grid-row">
+                  <div class="grid-cell cell-span2 info-checkbox no-label">
+                    <label><input name="travel-avail" type="checkbox"/>Continental</label>
+                  </div>
+                </div>
+                <div class="grid-row">
+                  <div class="grid-cell cell-span2 info-checkbox no-label">
+                    <label><input name="travel-avail" type="checkbox"/>International</label>
+                  </div>
+                </div>
+              </div>
+              <div class="grid-row info-block">
+                <div class="info-block-part">
+                  <div class="grid-row">
+                    <div class=" grid-cell cell-span3">
+                      <label>Special Allergies:</label>
+                    </div>
+                    <div class="grid-cell cell-span4 info-text">
+                      <input type="text"/>
+                    </div>
+                    <div class="grid-cell cell-span1 plus-button">
+                      <button onclick="return false"><span></span></button>
+                    </div>
+                  </div>
+                  <div class="grid-row">
+                    <div class="grid-cell cell-span4 info-text no-label">
+                      <input type="text"/>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              </div>
+            </form>
           </div>
-          <div class="form-button-container">
-            <input type="submit" value="Update settings"/>
-            <input type="reset" value="Cances/Reset"/>
-            <input type="reset" value="Back to My account"/>
-          </div>
-        </form>
+        </div>
       </div>
-    </div>
-  </div>
-</body>
-</html>
+    </body>
+  </html>
