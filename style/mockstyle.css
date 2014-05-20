@@ -132,7 +132,6 @@ h3 {
   font-size: 16px;
   font-weight: normal;
 }
-
 .search-wrapper {
   float: right;
   display: inline;
@@ -150,13 +149,26 @@ h3 {
   border-radius: 11px 0 0 11px;
   border: none;
   min-height: 21px;
-  max-width: 130px;
+  max-width: 120px;
 }
 
 .search-wrapper form a {
+  position: relative;
   color: grey;
   font-size: 11px;
   font-family: "Arial" sans-serif;
+  cursor: pointer;
+}
+
+.search-wrapper form a i {
+  position: absolute;
+  height: 9px;
+  width: 9px;
+  padding: 2px;
+  top: 4px;
+  left: 35px;
+  background-image: url(../images/arrow-fill-down.png);
+  background-repeat: no-repeat; 
 }
 
 .search-wrapper form button {
@@ -178,6 +190,7 @@ h3 {
   width: 38px;
   float: right;
   height: 21px;
+  cursor: pointer;
 }
 
 #content-container {
@@ -232,7 +245,7 @@ h3 {
   box-shadow: 2px 2px 5px 0 #949494;
 }
 
-.avatar-nav input {
+.avatar-nav button {
   -webkit-appearance: button;
   -moz-appearance: button;
   appearance: button;
@@ -247,10 +260,21 @@ h3 {
   border-radius: 5px;
   border: 1px solid #cccbcb;
   cursor: pointer;
+  position: relative;
 }
 
-.avatar-nav input:nth-of-type(1) {
+.avatar-nav button:nth-of-type(1) {
   color: #54a2d3;
+}
+
+.avatar-nav button:nth-of-type(1) i {
+  position: absolute;
+  width: 20px;
+  height: 40px;
+  padding: 2px;
+  top: -2px;
+  background-image: url(../images/arrow-fill-up.png);
+  background-repeat: no-repeat; 
 }
 
 .info-container {
