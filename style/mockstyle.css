@@ -85,7 +85,6 @@ body, html {
 #header {
   display: table;
   width: 100%;
-  padding: 5px 0 5px 0;
   background: #ffa84c;
   background: -moz-linear-gradient(top, #ffa84c 0%, #ff8e38 100%);
   background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ffa84c), color-stop(100%,#ff8e38));
@@ -105,12 +104,12 @@ h3 {
 }
 
 .nav-bar ul {
-  float: left;
-  font-weight: none;
+  margin-left: 40px;
+  padding-top: 2px;
 }
 
 .nav-bar ul li {
-  display: inline;
+  display: inline-block;
 }
 
 .nav-bar ul li:hover {
@@ -125,17 +124,25 @@ h3 {
 }
 
 .nav-bar ul li a {
+  display: block;
+  padding: 5px 15px;
   text-decoration: none;
-  width: 40px;
   color: #E8E8E8;
   font-family: sans-serif;
   font-size: 16px;
   font-weight: normal;
 }
+
+.nav-bar ul li:nth-of-type(2) a {
+  background-image: url(../images/arrow-fill-down-white.png);
+  background-position: 98% 50%;
+  background-repeat: no-repeat; 
+}
+
 .search-wrapper {
   float: right;
   display: inline;
-  padding: 3px 0 2px 0;
+  padding: 5px;
 }
 .search-wrapper form {
   border-radius: 10px 5px 5px 10px;
@@ -151,6 +158,7 @@ h3 {
   border: none;
   min-height: 21px;
   max-width: 120px;
+  font-weight: bold;
 }
 
 .search-wrapper form a {
@@ -270,6 +278,7 @@ h3 {
   border: 1px solid #cccbcb;
   cursor: pointer;
   position: relative;
+  box-shadow: 1px 1px 1px 0 #949494;
 }
 
 .avatar-nav button:nth-of-type(1) {
@@ -417,11 +426,48 @@ h3 {
   text-shadow: none;
 }
 
+
+.info-select.class:before,
+.info-select.class:after {
+  content: " ";
+  height: 26px;
+  pointer-events: none;
+  position: absolute;
+  right: 53.5%;
+  top: 71.7%;
+  width: 25px;
+}
+
+.info-select.type:before,
+.info-select.type:after {
+  content: " ";
+  height: 26px;
+  pointer-events: none;
+  position: absolute;
+  right: 53.5%;
+  top: 75.7%;
+  width: 25px;
+}
+
 .info-select:before {
   z-index: 1;
+  border: 1px solid #a5a6a4;
+  border-top: none;
+  border-bottom: none;
+  background: #eeeeee;
+  background: -moz-linear-gradient(top, #eeeeee 0%, #c1c1c1 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#eeeeee), color-stop(100%,#c1c1c1));
+  background: -webkit-linear-gradient(top, #eeeeee 0%,#c1c1c1 100%);
+  background: -o-linear-gradient(top, #eeeeee 0%,#c1c1c1 100%);
+  background: -ms-linear-gradient(top, #eeeeee 0%,#c1c1c1 100%);
+  background: linear-gradient(to bottom, #eeeeee 0%,#c1c1c1 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#eeeeee', endColorstr='#c1c1c1',GradientType=0 );
 }
 
 .info-select:after {
+  background-position: 40% 60%;
+  background-image: url(../images/arrow-fill-down-black.png);
+  background-repeat: no-repeat;
   z-index: 2;
 }
 
