@@ -135,12 +135,13 @@ h3 {
 .search-wrapper {
   float: right;
   display: inline;
+  padding: 3px 0 2px 0;
 }
 .search-wrapper form {
   border-radius: 10px 5px 5px 10px;
   background-color: white;
   margin-right: 3em;
-  width: 215px;
+  width: 95%;
 }
 
 .search-wrapper form input {
@@ -176,8 +177,10 @@ h3 {
   -moz-appearance: button;
   appearance: button;
   font-size: 12px;
-  color: grey;
+  color: #7c7c7c;
+  font-weight: bold;
   border: none;
+  border-left: 1px solid #7c7c7c;
   background: #f8f2f1;
   background: -moz-linear-gradient(top, #f8f2f1 0%, #cccbcb 100%);
   background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#f8f2f1), color-stop(100%,#cccbcb));
@@ -187,10 +190,16 @@ h3 {
   background: linear-gradient(to bottom, #f8f2f1 0%,#cccbcb 100%);
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f8f2f1', endColorstr='#cccbcb',GradientType=0 );
   border-radius: 0 5px 5px 0;
-  width: 38px;
+  box-shadow: 1px 0 3px 1px #7c7c7c;
+  width: 100%;
   float: right;
   height: 21px;
   cursor: pointer;
+}
+
+.search-wrapper form div:nth-of-type(1) {
+  box-shadow: 0 0 3px 1px #7c7c7c;
+  border-radius: 11px 0 0 11px;
 }
 
 #content-container {
@@ -310,7 +319,7 @@ h3 {
   font-weight: lighter;
   display: inline;
   margin-right: 15px;
-  padding: 3px 5px 0 5px; 
+  padding: 3px 10px 0 10px; 
 }
 
 .tab-open {
