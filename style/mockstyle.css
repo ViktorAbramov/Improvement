@@ -78,9 +78,6 @@ body, html {
   width: 100%
 }
 
-.wb-cell-body {
-  padding: 10px;
-}
 
 #header {
   display: table;
