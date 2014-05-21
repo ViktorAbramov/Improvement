@@ -10,19 +10,19 @@
         <div class="nav-bar grid-cell cell-span2">
           <ul>
             <li><a href="#">Home</a></li>
-            <li><a href="#">Account</a></li>
+            <li><a class="sub-menu" href="#">Account</a></li>
             <li><a href="#">Inbox</a></li>
           </ul>
         </div>
         <div class="search-wrapper">
           <form class="grid-row">
             <div class="grid-cell cell-span9">
-            <input type="text" placeholder="Search..." required/>
-            <a>People<i></i></a>
-          </div>
-          <div class="grid-cell cell-span3">
-            <button type="submit">Search</button>
-          </div>
+              <input type="text" placeholder="Search..." required/>
+              <a>People<i></i></a>
+            </div>
+            <div class="grid-cell cell-span3">
+              <button type="submit">Search</button>
+            </div>
           </form>
         </div>
       </div>
@@ -55,191 +55,214 @@
               <h3>Industry Specific</h3>
             </div>
             <form>
-              <div class="grid-cell cell-span9">
+              <div class="grid-cell cell-span7 info-block-main">
                 <div class="grid-row info-block">
-                  <div class="info-block-part">
-                    <div class="grid-row">
-                      <div class=" grid-cell cell-span3">
-                        <label>Alternative Names:</label>
+                  <div class="input-container">
+                    <div class="info-block-part">
+                      <div class="grid-row">
+                        <div class=" grid-cell cell-span3">
+                          <label>Alternative Names:</label>
+                        </div>
+                        <div class="grid-cell cell-span5 info-text">
+                          <input type="text"/>
+                        </div>
+                        <div class="grid-cell cell-span1 plus-button">
+                          <button onclick="return false"><span></span></button>
+                        </div>
                       </div>
-                      <div class="grid-cell cell-span4 info-text">
-                        <input type="text"/>
+                      <div class="grid-row">
+                        <div class="grid-cell cell-span5 info-text no-label">
+                          <input type="text"/>
+                        </div>
                       </div>
-                      <div class="grid-cell cell-span1 plus-button">
-                        <button onclick="return false"><span></span></button>
-                      </div>
-                    </div>
-                    <div class="grid-row">
-                      <div class="grid-cell cell-span4 info-text no-label">
-                        <input type="text"/>
-                      </div>
-                    </div>
-                    <div class="grid-row">
-                      <div class="grid-cell cell-span4 info-text no-label">
-                        <input type="text"/>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="info-block-part">
-                    <div class="grid-row">
-                      <div class=" grid-cell cell-span3">
-                        <label>Nicknames:</label>
-                      </div>
-                      <div class="grid-cell cell-span4 info-text typing">
-                        <input type="text"/>
-                      </div>
-                      <div class="grid-cell cell-span1 plus-button">
-                        <button onclick="return false"><span></span></button>
+                      <div class="grid-row">
+                        <div class="grid-cell cell-span5 info-text no-label">
+                          <input type="text"/>
+                        </div>
                       </div>
                     </div>
-                    <div class="grid-row">
-                      <div class="grid-cell cell-span4 info-text no-label">
-                        <input type="text"/>
+                    <div class="info-block-part">
+                      <div class="grid-row">
+                        <div class=" grid-cell cell-span3">
+                          <label>Nicknames:</label>
+                        </div>
+                        <div class="grid-cell cell-span5 info-text typing">
+                          <input type="text"/>
+                        </div>
+                        <div class="grid-cell cell-span1 plus-button">
+                          <button onclick="return false"><span></span></button>
+                        </div>
+                      </div>
+                      <div class="grid-row">
+                        <div class="grid-cell cell-span5 info-text no-label">
+                          <input type="text"/>
+                        </div>
                       </div>
                     </div>
                   </div>
                 </div>
                 <div class="grid-row info-block">
-                  <div class="info-block-part">
-                    <div class="grid-row">
-                      <div class=" grid-cell cell-span3">
-                        <label>Profession:</label>
+                  <div class="input-container">
+                    <div class="info-block-part">
+                      <div class="grid-row">
+                        <div class=" grid-cell cell-span3">
+                          <label>Profession:</label>
+                        </div>
+                        <div class="grid-cell cell-span5 info-text">
+                          <input type="text"/>
+                        </div>
+                        <div class="grid-cell cell-span1 plus-button">
+                          <button onclick="return false"><span></span></button>
+                        </div>
                       </div>
-                      <div class="grid-cell cell-span4 info-text">
-                        <input type="text"/>
-                      </div>
-                      <div class="grid-cell cell-span1 plus-button">
-                        <button onclick="return false"><span></span></button>
-                      </div>
-                    </div>
-                    <div class="grid-row">
-                      <div class="grid-cell cell-span4 info-text no-label">
-                        <input type="text"/>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="info-block-part">
-                    <div class="grid-row">
-                      <div class=" grid-cell cell-span3">
-                        <label>Special Skills:</label>
-                      </div>
-                      <div class="grid-cell cell-span4 info-text">
-                        <textarea></textarea>
+                      <div class="grid-row">
+                        <div class="grid-cell cell-span5 info-text no-label">
+                          <input type="text"/>
+                        </div>
                       </div>
                     </div>
-                  </div>
-                  <div class="info-block-part">
-                    <div class="grid-row">
-                      <div class=" grid-cell cell-span3">
-                        <label>Special Expertise:</label>
+                    <div class="info-block-part">
+                      <div class="grid-row">
+                        <div class=" grid-cell cell-span3">
+                          <label>Special Skills:</label>
+                        </div>
+                        <div class="grid-cell cell-span5 info-text">
+                          <textarea></textarea>
+                        </div>
                       </div>
-                      <div class="grid-cell cell-span4 info-text">
-                        <textarea></textarea>
+                    </div>
+                    <div class="info-block-part">
+                      <div class="grid-row">
+                        <div class=" grid-cell cell-span3">
+                          <label>Special Expertise:</label>
+                        </div>
+                        <div class="grid-cell cell-span5 info-text">
+                          <textarea></textarea>
+                        </div>
                       </div>
                     </div>
                   </div>
                 </div>
                 <div class="grid-row info-block">
-                  <div class="info-block-part">
+                  <div class="input-container">
+                    <div class="info-block-part">
+                      <div class="grid-row">
+                        <div class=" grid-cell cell-span3">
+                          <label>Driver License:</label>
+                        </div>
+                        <div class="grid-cell cell-span1 info-radio">
+                          <input id="license1" name="license" type="radio"/><label for="license1">Valid</label>
+                        </div>
+                        <div class="grid-cell cell-span2 info-radio">
+                          <input id="license2" name="license" type="radio"/><label for="license2">Not Valid</label>
+                        </div>
+                      </div>
+                    </div>
                     <div class="grid-row">
-                      <div class=" grid-cell cell-span3">
-                        <label>Driver License:</label>
+                      <div class="grid-row info-block-part">
+                        <div class=" grid-cell cell-span3">
+                          <label>Standart Licenses:</label>
+                        </div>
+                        <div class="grid-cell cell-span5 info-select type">
+                          <select>
+                            <option>Passanger Car</option>
+                            <option>Truck</option>
+                          </select>
+                        </div>
                       </div>
-                      <div class="grid-cell cell-span1 info-radio">
-                        <label><input name="license" type="radio"/>Valid</label>
+                    </div>
+                    <div class="grid-row">
+                      <div class="grid-row info-block-part">
+                        <div class=" grid-cell cell-span3">
+                          <label>Driver License's Type:</label>
+                        </div>
+                        <div class="grid-cell cell-span5 info-select class">
+                          <select>
+                            <option>Class A</option>
+                            <option>Class B</option>
+                            <option>Class C</option>
+                            <option>Class D</option>
+                          </select>
+                        </div>
                       </div>
-                      <div class="grid-cell cell-span1 info-radio">
-                        <label><input name="license" type="radio"/>Not Valid</label>
+                      <div class="grid-row info-block-part">
+                        <div class=" grid-cell cell-span3">
+                          <label>Driver's Something:</label>
+                        </div>
+                        <div class="grid-cell cell-span5 info-select class">
+                          <select>
+                            <option>M (Metal Coil)</option>
+                            <option>A (Another variant)</option>
+                            <option>B (Another variant)</option>
+                            <option>C (Another variant)</option>
+                          </select>
+                        </div>
                       </div>
                     </div>
                   </div>
-                  <div class="grid-row">
+                </div>
+                <div class="grid-row info-block">
+                  <div class="input-container">
                     <div class="grid-row info-block-part">
                       <div class=" grid-cell cell-span3">
-                        <label>Standart Licenses:</label>
+                        <label>Passport:</label>
                       </div>
-                      <div class="grid-cell cell-span4 info-select type">
-                        <select>
-                          <option>Passanger Car</option>
-                          <option>Truck</option>
-                        </select>
+                      <div class="grid-cell cell-span1 info-radio">
+                        <input id="passport1" name="passport" type="radio"/><label for="passport1">Valid</label>
+                      </div>
+                      <div class="grid-cell cell-span2 info-radio">
+                        <input id="passport2" name="passport" type="radio"/><label for="passport2">Not Valid</label>
                       </div>
                     </div>
-                  </div>
-                  <div class="grid-row">
                     <div class="grid-row info-block-part">
                       <div class=" grid-cell cell-span3">
-                        <label>Driver License's Type:</label>
+                        <label>Passport Travel Avail.:</label>
                       </div>
-                      <div class="grid-cell cell-span4 info-select class">
-                        <select>
-                          <option>Class A</option>
-                          <option>Class B</option>
-                          <option>Class C</option>
-                          <option>Class D</option>
-                        </select>
+                      <div class="grid-cell cell-span1 info-radio">
+                        <input id="avail1" name="travel" type="radio"/><label for="avail1">Yes</label>
+                      </div>
+                      <div class="grid-cell cell-span1 info-radio">
+                        <input id="avail2" name="travel" type="radio"/><label for="avail2" >No</label>
                       </div>
                     </div>
-                  </div>
-                </div>
-                <div class="grid-row info-block">
-                  <div class="grid-row info-block-part">
-                    <div class=" grid-cell cell-span3">
-                      <label>Passport:</label>
-                    </div>
-                    <div class="grid-cell cell-span1 info-radio">
-                      <label><input name="passport" type="radio"/>Valid</label>
-                    </div>
-                    <div class="grid-cell cell-span1 info-radio">
-                      <label><input name="passport" type="radio"/>Not Valid</label>
-                    </div>
-                  </div>
-                  <div class="grid-row info-block-part">
-                    <div class=" grid-cell cell-span3">
-                      <label>Passport Travel Avail.:</label>
-                    </div>
-                    <div class="grid-cell cell-span1 info-radio">
-                      <label><input name="travel" type="radio"/>Yes</label>
-                    </div>
-                    <div class="grid-cell cell-span1 info-radio">
-                      <label><input name="travel" type="radio"/>No</label>
-                    </div>
-                  </div>
-                  <div class="grid-row info-block-part">
-                    <div class=" grid-cell cell-span3">
-                      <label>Travel Availability:</label>
-                    </div>
-                    <div class="grid-cell cell-span2 info-checkbox">
-                      <input id="travel1" name="travel-avail" type="checkbox"/><label for="travel1">In-State</label>
-                    </div>
-                  </div>
-                  <div class="grid-row">
-                    <div class="grid-cell cell-span2 info-checkbox no-label">
-                      <input id="travel2" name="travel-avail" type="checkbox"/><label for="travel2">Continental</label>
-                    </div>
-                  </div>
-                  <div class="grid-row">
-                    <div class="grid-cell cell-span2 info-checkbox no-label">
-                      <input id="travel3" name="travel-avail" type="checkbox"/><label for="travel3">International</label>
-                    </div>
-                  </div>
-                </div>
-                <div class="grid-row info-block">
-                  <div class="info-block-part">
-                    <div class="grid-row">
+                    <div class="grid-row info-block-part">
                       <div class=" grid-cell cell-span3">
-                        <label>Special Allergies:</label>
+                        <label>Travel Availability:</label>
                       </div>
-                      <div class="grid-cell cell-span4 info-text">
-                        <input type="text"/>
-                      </div>
-                      <div class="grid-cell cell-span1 plus-button">
-                        <button onclick="return false"><span></span></button>
+                      <div class="grid-cell cell-span2 info-checkbox">
+                        <input id="travel1" name="travel-avail" type="checkbox"/><label for="travel1">In-State</label>
                       </div>
                     </div>
                     <div class="grid-row">
-                      <div class="grid-cell cell-span4 info-text no-label">
-                        <input type="text"/>
+                      <div class="grid-cell cell-span2 info-checkbox no-label">
+                        <input id="travel2" name="travel-avail" type="checkbox"/><label for="travel2">Continental</label>
+                      </div>
+                    </div>
+                    <div class="grid-row">
+                      <div class="grid-cell cell-span2 info-checkbox no-label">
+                        <input id="travel3" name="travel-avail" type="checkbox"/><label for="travel3">International</label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="grid-row info-block">
+                  <div class="input-container">
+                    <div class="info-block-part">
+                      <div class="grid-row">
+                        <div class=" grid-cell cell-span3">
+                          <label>Special Allergies:</label>
+                        </div>
+                        <div class="grid-cell cell-span5 info-text">
+                          <input type="text"/>
+                        </div>
+                        <div class="grid-cell cell-span1 plus-button">
+                          <button onclick="return false"><span></span></button>
+                        </div>
+                      </div>
+                      <div class="grid-row">
+                        <div class="grid-cell cell-span5 info-text no-label">
+                          <input type="text"/>
+                        </div>
                       </div>
                     </div>
                   </div>
