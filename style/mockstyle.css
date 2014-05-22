@@ -13,72 +13,6 @@ body, html {
   background-color: #f0f0f0;
 }
 
-#grid {
-  min-height: 100%;
-  position: relative;
-  width: 100%;
-  z-index: 0;
-}
-
-.grid-row:after { 
-  clear: both; 
-  content: ""; 
-  display: block; 
-}
-
-/* Cell width */
-
-.grid-cell {
-  float: left;
-  opacity: 1;
-  width: 8.3333333%;
-}
-
-.cell-span2 {
-  width: 16.666667%; /*160px*/
-}
-
-.cell-span3 {
-  width: 25.000000%; /*240px*/
-}
-
-.cell-span4 {
-  width: 33.333333%; /*320px*/
-}
-
-.cell-span5 {
-  width: 41.666667%; /*400px*/
-}
-
-.cell-span6 {
-  width: 50.00000%; /*480px*/ 
-}
-
-.cell-span7 {
-  width: 58.333333%; /*560px*/
-}
-
-.cell-span8 {
-  width: 66.666667%; /*640px*/
-}
-
-.cell-span9 {
-  width: 75.000000%; /*720px*/
-}
-
-.cell-span10 {
-  width: 83.333333%; /*800px*/ 
-}
-
-.cell-span11 {
-  width: 91.666667%; /*880px*/ 
-}
-
-.cell-span12 {
-  width: 100%
-}
-
-
 #header {
   display: table;
   width: 100%;
@@ -195,6 +129,17 @@ h3 {
   background-repeat: no-repeat; 
 }
 
+.search-wrapper form div:first-of-type {
+  display: inline-block;
+  width: 77%;
+  border-radius: 11px 0 0 11px;
+}
+
+.search-wrapper form div:last-of-type {
+  width: 21%;
+  float: right;
+}
+
 .search-wrapper form button {
   -webkit-appearance: button;
   -moz-appearance: button;
@@ -213,17 +158,11 @@ h3 {
   background: linear-gradient(to bottom, #f8f2f1 0%,#cccbcb 100%);
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f8f2f1', endColorstr='#cccbcb',GradientType=0 );
   border-radius: 0 5px 5px 0;
-  box-shadow: 1px 0 3px 1px #7c7c7c;
   width: 100%;
-  float: right;
   height: 21px;
   cursor: pointer;
 }
 
-.search-wrapper form div:nth-of-type(1) {
-  box-shadow: 0 0 3px 1px #7c7c7c;
-  border-radius: 11px 0 0 11px;
-}
 
 #content-container {
   min-width: 100%;
@@ -330,7 +269,7 @@ h3 {
 
 .tab-bar {
   border-bottom: 1px solid #a5a6a4;
-  margin-right: 215px;
+  margin-right: 255px;
 }
 
 .tab-bar ul {
@@ -368,41 +307,18 @@ h3 {
   background: linear-gradient(to bottom, #939393 0%,#8e8e8e 100%);
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#939393', endColorstr='#8e8e8e',GradientType=0 );
 }
-
-.info-form {
-  padding-top: 40px;
-}
-
-.info-text input {
-  position: relative;
-  border: 1px solid #a5a6a4;
-  width: 100%;
-  height: 25px;
-  padding: 5px; 
-}
-
-.typing input{
+.typing {
   background-image: url(../images/pencil.png), url(../images/decline.png);
   background-position: 90% 50%, 97% 50%; 
   background-repeat: no-repeat;
   padding-right: 30px;
 }
 
-.decline input {
-  background-position: 95% 50%;
-  background-image: url(../images/decline.png);
-  background-repeat: no-repeat;
-  padding-right: 30px;
-}
 
-.info-text textarea {
-  border: 1px solid #a5a6a4;
-  min-width: 100%;
-  max-width: 100%; 
-  min-height: 5%;
-  max-height: 100px;
-  overflow: scroll;
-  padding: 10px;
+.info-radio input, .info-checkbox input {
+  margin-right: 5px;
+  cursor: pointer;
+  display: none;
 }
 
 .info-radio label, .info-checkbox label{
@@ -424,10 +340,18 @@ h3 {
 }
 
 .info-radio label {
+  margin-right: 10px;
   padding-left: 20px;
   background-image: url(../images/radio-empty.png);
   background-position: left;
   background-repeat: no-repeat; 
+}
+
+.info-radio label:first-of-type {
+  background-image: none;
+  color: #8e8e8e;
+  padding: 0;
+  margin-right: 80px;
 }
 
 .info-radio input:checked + label {
@@ -437,28 +361,42 @@ h3 {
   background-repeat: no-repeat; 
 }
 
-
-.info-radio input, .info-checkbox input {
-  margin-right: 5px;
-  cursor: pointer;
-  display: none;
+.info-block:nth-of-type(4) .info-radio:first-of-type label:first-of-type {
+  margin-right: 112px;
 }
 
-.info-checkbox.no-label input {
-  margin-left: 5%;
+.info-block:nth-of-type(4) .info-radio:nth-of-type(2) label:first-of-type {
+  margin-right: 35px;
 }
 
-.info-checkbox.no-label label {
-  margin-left: 23%;
+.info-block:nth-of-type(4) .info-radio:nth-of-type(2) label:nth-of-type(2) {
+  margin-right: 16px;
 }
 
-.info-checkbox.no-label input:checked  + label {
-  margin-left: 23%;
-} 
+.info-block:nth-of-type(4) div:nth-of-type(3) label:first-of-type {
+  background-image: none;
+  color: #8e8e8e;
+  padding: 0;
+  margin-right: 61px;
+}
+
+.info-block:nth-of-type(4) div:nth-of-type(4) label,
+.info-block:nth-of-type(4) div:nth-of-type(5) label {
+  position: relative;
+  left: 172px;
+}
+
+.info-block:last-of-type .info-row input, .info-block:last-of-type .info-row-main input {
+  position: relative;
+}
+
+.info-block:last-of-type .info-row input {
+  right: 10px;
+}
 
 .info-select select {
   cursor: pointer;
-  width: 100%;
+  width: 365px;
   -webkit-appearance: none;
   -o-appearance: none;
   -ms-appearance: none;
@@ -468,13 +406,22 @@ h3 {
   border: 1px solid #a5a6a4;
   border-radius: 0;
   text-indent: 0.01px;
-  overflow: '';
   line-height: 18px;
   padding: 4px;
   text-shadow: 0 1px 0 white;
   background-image: url(../images/select-button.png);
   background-repeat: no-repeat;
   background-position: 100% 50%;
+  position: relative;
+  left: 60px;
+}
+
+.info-select:last-of-type select {
+  left: 56px;
+}
+
+.info-select.long select {
+  left: 40px;
 }
 
 .info-select select option {
@@ -488,31 +435,84 @@ h3 {
 }
 
 .info-block {
-  padding: 20px 0;
+  padding: 3px 0 10px 0;
   background-image: url(../images/border-horizontal.png);
   background-position: top;
   background-repeat: repeat-x;
-  width: 80%;
+  width: 70%;
+}
+
+.info-block:first-of-type div:nth-of-type(4) label {
+  margin-right: 17.2%;
+}
+
+.info-block:nth-of-type(2) .info-row-main:first-of-type label {
+   margin-right: 17.7%;
+}
+
+.info-block:nth-of-type(2) .info-row-main textarea {
+   margin-left: 28px;
 }
 
 .info-block-main {
   margin-right: 40px;
 }
 
-.info-block-part {
-  margin-top: 10px;
-  margin-left: 10px;
-  width: 110%;
-}
-.info-block .input-container {
-  width: 134%;
+.info-row-main {
+  margin-top: 5px;
+  width: 107%;
 }
 
-.plus-button {
-  padding-left: 15px;
+.info-row-main label {
+  margin-right: 57px;
 }
 
-.plus-button button {
+
+.info-row {
+  margin-top: 5px;
+}
+
+.info-row input {
+  margin-left: 172px;
+
+}
+
+.info-row-main input, .info-row input {
+  width: 365px;
+  height: 25px;
+  padding: 0 5px;
+}
+
+
+.info-textarea textarea {
+  border: 1px solid #a5a6a4;
+  min-width: 365px;
+  max-width: 365px; 
+  min-height: 100px;
+  max-height: 100px;
+  overflow: scroll;
+  padding: 10px;
+}
+
+.info-textarea label {
+  position: relative;
+  top: -85px;
+}
+
+.info-block:nth-of-type(2) div:last-of-type textarea{
+  margin-left: 5px;
+}
+
+#main-info {
+  width: 90%;
+  display: inline-block;
+}
+
+#main-info form {
+  width: 78%;
+}
+
+.plus-button{
   cursor: pointer;
   border-radius: 3px;
   border: none;
@@ -529,7 +529,10 @@ h3 {
   box-shadow: 1px 2px 1px 0 #949494;
   padding-top: 4px;
   padding-left: 4px;
-  margin-top: 2px; 
+  margin-top: 2px;
+  position: relative;
+  top: 4px;
+  margin-left: 10px;
 }
 
 .plus-button span {
@@ -545,7 +548,14 @@ label {
   font-size: 13px;
 }
 
-.form-button button {
+#button-container {
+  width: 10%;
+  position: absolute;
+  left: 53%;
+  top: 48%;
+}
+
+#button-container button {
   border: none;
   -webkit-appearance: button;
   -moz-appearance: button;
@@ -559,7 +569,7 @@ label {
   cursor: pointer;
 }
 
-.form-button.button-accept button {
+#button-container .button-accept button {
   background: -moz-linear-gradient(top, #56dd4b 0%, #26c12e 100%);
   background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#56dd4b), color-stop(100%,#26c12e));
   background: -webkit-linear-gradient(top, #56dd4b 0%,#26c12e 100%);
@@ -570,7 +580,7 @@ label {
   color: white;
 }
 
-.form-button.button-reset button {
+#button-container .button-reset button {
   background: #929292;
   background: -moz-linear-gradient(top, #929292 0%, #8d8d8d 100%);
   background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#929292), color-stop(100%,#8d8d8d));
@@ -582,7 +592,7 @@ label {
   color: white;
 }
 
-.form-button.button-back button {
+#button-container .button-back button {
   position: relative;
   color: #424040;
   background: #c8c8c8;
@@ -596,7 +606,7 @@ label {
   
 }
 
-.form-button.button-back button i {
+#button-container .button-back button i {
   position: absolute;
   top: 7px;
   left: 10px;
