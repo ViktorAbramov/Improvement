@@ -5,15 +5,15 @@
     <link rel="stylesheet" type="text/css" href="style/mockstyle.css">
   </head>
   <body>
-    <div id="header" class="">
-      <div class="nav-bar">
+    <div id="header">
+      <div class="my-nav-wrapper">
         <ul>
           <li><a href="#">Home</a></li>
           <li><a class="sub-menu" href="#">Account</a></li>
           <li><a href="#">Inbox</a></li>
         </ul>
       </div>
-      <div class="search-wrapper">
+      <div class="my-search-wrapper">
         <form>
           <div>
             <input type="text" placeholder="Search..." required/>
@@ -25,150 +25,151 @@
         </form>
       </div>
     </div>
-    <div id="content-container">
-      <ul class="breadcrumb">
-        <li>Someguycheg Familsson</li>
-        <li>Account Settings</li>
-      </ul>
-      <div id="photo-container">
-        <img src="http://img0.liveinternet.ru/images/attach/c/6/93/770/93770162_roden.jpg"/>
-        <div class="avatar-nav">
-          <button type="submit">Upload a new photo<i></i></button>
-          <button type="reset">Delete<i></i></button>
+    <div id="content">
+      <div id="my-breadcrumb">
+        <ul>
+          <li>Someguycheg Familsson</li>
+          <li>Account Settings</li>
+        </ul>
+      </div>
+      <div class="my-content-wrapper">
+        <div class="my-photo-wrapper">
+          <img src="http://img0.liveinternet.ru/images/attach/c/6/93/770/93770162_roden.jpg"/>
+          <button type="submit">Upload a new photo</button>
+          <button type="reset">Delete</button>
+        </div>
+        <div class="my-info-wrapper">
+          <div id="tab-panel">
+            <ul>
+              <li class="tab-closed">Personal Information</li>
+              <li class="tab-open">Industry Specific</li>
+              <li class="tab-closed">Addresses</li>
+              <li class="tab-closed">Comp Card</li>
+              <li class="tab-closed">Settings</li>
+            </ul>
+          </div>
+          <div class="my-form-wrapper">
+            <h3>Industry Specific</h3>
+            <form>
+              <div class="my-form-fields-wrapper">
+                <fieldset>
+                  <div class="info-row-main">
+                    <strong>Alternative Names:</strong>
+                    <input type="text"/>
+                    <button class="plus-button"onclick="return false"><span></span></button>
+                  </div>
+                  <div class="info-row">
+                    <input type="text"/>
+                  </div>
+                  <div class="info-row">
+                    <input type="text"/>
+                  </div>
+                  <div class="info-row-main typing">
+                    <strong>Nicknames:</strong>
+                    <input type="text"/>
+                    <button class="plus-button"onclick="return false"><span></span></button>
+                  </div>
+                  <div class="info-row">
+                    <input type="text"/>
+                  </div>
+                </fieldset>
+                <fieldset>
+                  <div class="info-row-main">
+                    <strong>Profession:</strong>
+                    <input type="text"/>
+                    <button class="plus-button"onclick="return false"><span></span></button>
+                  </div>
+                  <div class="info-row">
+                    <input type="text"/>
+                  </div>
+                  <div class="info-row my-textarea-wrapper">
+                    <strong>Special Skills:</strong>
+                    <textarea></textarea>
+                  </div>
+                  <div class="info-row my-textarea-wrapper">
+                    <strong>Special Experise:</strong>
+                    <textarea></textarea>
+                  </div>
+                </fieldset>
+                <fieldset>
+                  <div class="info-row my-radio-wrapper">
+                    <strong>Driver License:</strong>
+                    <input id="license1" name="license" type="radio"/><label for="license1">Valid</label>
+                    <input id="license2" name="license" type="radio"/><label for="license2">Not Valid</label>
+                  </div>
+                  <div class="info-row my-select-wrapper">
+                    <strong>Standart Licenses:</strong>
+                    <select>
+                      <option>Passanger Car</option>
+                      <option>Truck</option>
+                    </select>
+                  </div>
+                  <div class="info-row my-select-wrapper">
+                    <strong>Driver License's Type:</strong>
+                    <select>
+                      <option>Class A</option>
+                      <option>Class B</option>
+                      <option>Class C</option>
+                      <option>Class D</option>
+                    </select>
+                  </div>
+                  <div class="info-row my-select-wrapper">
+                    <strong>Driver's Something:</strong>
+                    <select>
+                      <option>M (Metal Coil)</option>
+                      <option>A (Another variant)</option>
+                      <option>B (Another variant)</option>
+                      <option>C (Another variant)</option>
+                    </select>
+                  </div>
+                </fieldset>
+                <fieldset>
+                  <div class="info-row my-radio-wrapper">
+                    <strong>Passport:</strong>
+                    <input id="passport1" name="passport" type="radio"/><label for="passport1">Valid</label>
+                    <input id="passport2" name="passport" type="radio"/><label for="passport2">Not Valid</label>
+                  </div>
+                  <div class="info-row my-radio-wrapper">
+                    <strong>Passport Travel Avail.:</strong>
+                    <input id="avail1" name="travel" type="radio"/><label for="avail1">Yes</label>
+                    <input id="avail2" name="travel" type="radio"/><label for="avail2">No</label>
+                  </div>
+                  <div class="info-row my-checkbox-wrapper">
+                    <strong>Travel Availability:</strong>
+                    <input id="travel1" name="travel-avail" type="checkbox"/><label for="travel1">In-State</label>
+                  </div>
+                  <div class="info-row my-checkbox-wrapper nameless">
+                    <input id="travel2" name="travel-avail" type="checkbox"/><label for="travel2">Continental</label>
+                  </div>
+                  <div class="info-row my-checkbox-wrapper nameless">
+                    <input id="travel3" name="travel-avail" type="checkbox"/><label for="travel3">International</label></div>
+                  </fieldset>
+                  <fieldset>
+                    <div class="info-row-main">
+                      <strong>Special Allergies:</strong>
+                      <input type="text"/>
+                      <button class="plus-button"onclick="return false"><span></span></button>
+                    </div>
+                    <div class="info-row">
+                      <input type="text"/>
+                    </div>
+                  </fieldset>
+                </div>
+                <div class="my-form-button-wrapper">
+                  <div class="button-accept">
+                    <button type="submit" onclick="return false">Update Settings</button>
+                  </div>
+                  <div class="button-reset">
+                    <button type="reset" onclick="return false">Cancel / Reset</button>
+                  </div>
+                  <div class="button-back">
+                    <button type="reset" onclick="return false"><i></i>Back to My Account</button>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
         </div>
       </div>
-      <div class="info-container">
-        <div class=" tab-bar">
-          <ul>
-            <li class="tab-closed">Personal Information</li>
-            <li class="tab-open">Industry Specific</li>
-            <li class="tab-closed">Addresses</li>
-            <li class="tab-closed">Comp Card</li>
-            <li class="tab-closed">Settings</li>
-          </ul>
-        </div>
-        <div id="main-info">
-          <h3>Industry Specific</h3>
-          <form>
-            <div class="info-block-main">
-              <div class="info-block">
-                <div class="info-row-main">
-                  <label>Alternative Names:</label>
-                  <input type="text"/>
-                  <button class="plus-button"onclick="return false"><span></span></button>
-                </div>
-                <div class="info-row">
-                  <input type="text"/>
-                </div>
-                <div class="info-row">
-                  <input type="text"/>
-                </div>
-                <div class="info-row-main">
-                  <label>Nicknames:</label>
-                  <input class="typing" type="text"/>
-                  <button class="plus-button"onclick="return false"><span></span></button>
-                </div>
-                <div class="info-row">
-                  <input type="text"/>
-                </div>
-              </div>
-              <div class="info-block">
-                <div class="info-row-main">
-                  <label>Profession:</label>
-                  <input type="text"/>
-                  <button class="plus-button"onclick="return false"><span></span></button>
-                </div>
-                <div class="info-row">
-                  <input type="text"/>
-                </div>
-                <div class="info-row-main info-textarea">
-                  <label>Special Skills:</label>
-                  <textarea></textarea>
-                </div>
-                <div class="info-row-main info-textarea">
-                  <label>Special Expertise:</label>
-                  <textarea></textarea>
-                </div>
-              </div>
-              <div class="info-block">
-                <div class="info-row info-radio">
-                  <label>Driver License:</label>
-                  <input id="license1" name="license" type="radio"/><label for="license1">Valid</label>
-                  <input id="license2" name="license" type="radio"/><label for="license2">Not Valid</label>
-                </div>
-                <div class="info-row info-select">
-                  <label>Standart Licenses:</label>
-                  <select>
-                    <option>Passanger Car</option>
-                    <option>Truck</option>
-                  </select>
-                </div>
-                <div class="info-row info-select long">
-                  <label>Driver License's Type:</label>
-                  <select>
-                    <option>Class A</option>
-                    <option>Class B</option>
-                    <option>Class C</option>
-                    <option>Class D</option>
-                  </select>
-                </div>
-                <div class="info-row info-select">
-                  <label>Driver's Something:</label>
-                  <select>
-                    <option>M (Metal Coil)</option>
-                    <option>A (Another variant)</option>
-                    <option>B (Another variant)</option>
-                    <option>C (Another variant)</option>
-                  </select>
-                </div>
-              </div>
-              <div class="info-block">
-                <div class="info-row info-radio">
-                  <label>Passport:</label>
-                  <input id="passport1" name="passport" type="radio"/><label for="passport1">Valid</label>
-                  <input id="passport2" name="passport" type="radio"/><label for="passport2">Not Valid</label>
-                </div>
-                <div class="info-row info-radio">
-                  <label>Passport Travel Avail.:</label>
-                  <input id="avail1" name="travel" type="radio"/><label for="avail1">Yes</label>
-                  <input id="avail2" name="travel" type="radio"/><label for="avail2">No</label>
-                </div>
-                <div class="info-row info-checkbox">
-                  <label>Travel Availability:</label>
-                  <input id="travel1" name="travel-avail" type="checkbox"/><label for="travel1">In-State</label>
-                </div>
-                <div class="info-row info-checkbox">
-                  <input id="travel2" name="travel-avail" type="checkbox"/><label for="travel2">Continental</label>
-                </div>
-                <div class="info-row info-checkbox">
-                  <input id="travel3" name="travel-avail" type="checkbox"/><label for="travel3">International</label>
-                </div>
-              </div>
-              <div class="info-block">
-                <div class="info-row-main">
-                  <label>Special Allergies:</label>
-                  <input type="text"/>
-                  <button class="plus-button"onclick="return false"><span></span></button>
-                </div>
-                <div class="info-row">
-                  <input type="text"/>
-                </div>
-              </div>
-            </div>
-            <div id="button-container">
-              <div class="button-accept">
-                <button type="submit" onclick="return false">Update Settings</button>
-              </div>
-              <div class="button-reset">
-                <button type="reset" onclick="return false">Cancel / Reset</button>
-              </div>
-              <div class="button-back">
-                <button type="reset" onclick="return false"><i></i>Back to My Account</button>
-              </div>
-            </div>
-          </form>
-        </div>
-      </div>
-    </div>
-  </body>
-</html>
+    </body>
+  </html>
